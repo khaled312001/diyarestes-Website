@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:barmagly.tech)",
+      "WebFetch(domain:www.barmagly.tech)",
+      "Bash(node:*)"
+    ]
+  }
+}

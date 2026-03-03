@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض فني ومالي لبرمجة موقع إلكتروني - Barmagly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-cyan: #00D9FF;
+            --primary-purple: #9B51E0;
+            --dark-navy: #0A1628;
+            --text-light: #ffffff;
+            --text-gray: #B8C1D8;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark-navy);
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: var(--dark-navy);
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+            padding: 35px 45px;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 50%, #0A1628 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .circuit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            background-image:
+                linear-gradient(90deg, var(--primary-cyan) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary-cyan) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            width: 180px;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.5));
+        }
+
+        .cover-title {
+            font-size: 42px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            font-size: 24px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .cover-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(155, 81, 224, 0.3);
+            margin: 0 auto;
+        }
+
+        .cover-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .page-header {
+            text-align: right;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, var(--primary-cyan), var(--primary-purple), transparent) 1;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
+
+        /* Shared Content Boxes */
+        .content-box {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.05), rgba(155, 81, 224, 0.05));
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+
+        .content-box-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .content-box-icon {
+            font-size: 32px;
+            color: var(--primary-cyan);
+        }
+
+        .content-box-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-cyan);
+        }
+
+        .content-text {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .feature-list li {
+            font-size: 15px;
+            padding: 8px 0;
+            padding-right: 28px;
+            position: relative;
+            color: var(--text-light);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: '\f26a';
+            font-family: 'bootstrap-icons';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: var(--primary-purple);
+            font-size: 14px;
+        }
+
+        /* Screenshot Container */
+        .screenshot-container {
+            width: 100%;
+            height: calc(100% - 150px);
+            border-radius: 12px;
+            border: 2px dashed rgba(0, 217, 255, 0.4);
+            background: rgba(0, 217, 255, 0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: top;
+            z-index: 2;
+        }
+
+        .placeholder-content {
+            position: absolute;
+            text-align: center;
+            z-index: 1;
+            color: var(--text-gray);
+            opacity: 0.6;
+        }
+
+        .placeholder-content i {
+            font-size: 60px;
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .placeholder-content span {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* Pricing Section */
+        .price-card {
+            background: linear-gradient(135deg, rgba(155, 81, 224, 0.1), rgba(0, 217, 255, 0.1));
+            border: 2px solid var(--primary-cyan);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .price-card-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .price-includes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            text-align: right;
+        }
+
+        .price-include-item {
+            background: rgba(10, 22, 40, 0.8);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-include-item i {
+            color: var(--primary-cyan);
+            font-size: 18px;
+        }
+
+        .old-price {
+            font-size: 20px;
+            color: #ff4757;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+
+        .new-price {
+            font-size: 40px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .currency {
+            font-size: 18px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background: #ff4757;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(155, 81, 224, 0.1));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-box i {
+            font-size: 28px;
+            color: var(--primary-cyan);
+        }
+
+        .contact-details h4 {
+            font-size: 14px;
+            color: var(--primary-purple);
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            font-size: 13px;
+            color: var(--text-light);
+            word-break: break-word;
+        }
+
+        .contact-details a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .thank-you {
+            background: linear-gradient(135deg, rgba(155, 81, 224, 0.15), rgba(0, 217, 255, 0.15));
+            border: 2px solid var(--primary-cyan);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .thank-you i {
+            font-size: 40px;
+            color: var(--primary-cyan);
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 20px;
+            left: 45px;
+            right: 45px;
+            text-align: center;
+            font-size: 11px;
+            color: rgba(184, 193, 216, 0.6);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                border: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. Cover Page -->
+    <div class="page cover-page">
+        <div class="circuit-overlay"></div>
+        <div class="cover-content">
+            <div class="logo-container">
+                <img src="logo (1).png" alt="Barmagly Logo">
+            </div>
+            <h1 class="cover-title">عرض فني ومالي لموقع ديار العقارية<br>DIYAR Estates</h1>
+            <p class="cover-subtitle">مقدّم من شركة برمجلي – Barmagly</p>
+            <div class="cover-badge">تصميم احترافي • برمجة متقدمة • دعم فني</div>
+            <div class="cover-image">
+                <img src="64677e88-51b4-4035-a56b-1ea555b3378a.jpg" alt="Barmagly Solutions"
+                    onerror="this.style.display='none'">
+            </div>
+        </div>
+        <div class="page-footer" style="justify-content: center;">
+            www.barmagly.tech | info@barmagly.tech | +201010254819
+        </div>
+    </div>
+
+    <!-- 2. About Us & Project -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">مقدمة عن الشركة والمشروع</h2>
+            <p class="page-subtitle">نظرة عامة على خدماتنا وأهداف مشروعكم</p>
+        </div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+                <i class="bi bi-buildings-fill content-box-icon"></i>
+                <h3 class="content-box-title">من نحن (عن برمجلي)</h3>
+            </div>
+            <p class="content-text">
+                برمجلي هي شركة رائدة ومتخصصة في تقديم الحلول البرمجية وتطوير المواقع والتطبيقات الرقمية المبتكرة.
+                في برمجلي، نجمع بين الإبداع في التصميم والتميز في البرمجة لتقديم منتجات رقمية تعكس هوية عملائنا وتساعدهم
+                على تحقيق الريادة في أسواقهم. فريقنا مكون من خبراء تقنيين يسعون دائمًا لتقديم أفضل الحلول بأحدث التقنيات
+                وأعلى معايير الجودة والتصميم.
+            </p>
+        </div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+                <i class="bi bi-rocket-takeoff-fill content-box-icon"></i>
+                <h3 class="content-box-title">عن المشروع</h3>
+            </div>
+            <p class="content-text">
+                يهدف المشروع إلى تطوير منصة رقمية فاخرة لشركة "ديار العقارية - DIYAR Estates" المتخصصة في التطوير
+                والاستثمار العقاري الدولي (أمريكا، مصر، تركيا). المنصة مصممة بهوية بصرية راقية تعتمد على الألوان الملكية
+                (Deep Navy & Gold) لتعكس الفخامة والموثوقية، مع تقديم تجربة مستخدم (UX) استثنائية للمستثمرين والعملاء
+                حول العالم.
+                يحتوي الموقع على صفحات ديناميكية لعرض المشاريع، بوابة مخصصة للمستثمرين، ونظام تفاعلي كامل يعكس حجم
+                الشركة عالمياً.
+            </p>
+            <ul class="feature-list">
+                <li>إبراز التواجد الدولي للشركة بمشاريع في مصر، أمريكا، وتركيا.</li>
+                <li>تصميم يعكس الفخامة المطلقة للمشاريع العقارية الفاخرة (Luxury Real Estate).</li>
+                <li>بنية برمجية متطورة باستخدام إطار عمل Laravel لضمان أعلى معايير الأمان وقابلية التوسع المستقبلي.</li>
+            </ul>
+        </div>
+
+        <div class="page-footer">
+            <span>برمجلي لتقنية المعلومات</span>
+            <span>الصفحة ٢</span>
+        </div>
+    </div>
+
+    <!-- 3. Features -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">مميزات الموقع ولوحة التحكم</h2>
+            <p class="page-subtitle">التفاصيل التقنية والميزات المتاحة في النظام</p>
+        </div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+                <i class="bi bi-pc-display-horizontal content-box-icon"></i>
+                <h3 class="content-box-title">مميزات الموقع (واجهة المستخدم Front-End)</h3>
+            </div>
+            <ul class="feature-list">
+                <li><strong>هوية بصرية فاخرة وتجربة مستخدم مميزة:</strong> تصميم متكامل يعتمد على ألوان (Navy & Gold) مع
+                    خطوط مخصصة (Playfair Display) لإبراز الطابع الفاخر.</li>
+                <li><strong>استعراض متقدم للمشاريع العقارية:</strong> صفحات مخصصة للمشاريع حسب الدولة (مصر، أمريكا،
+                    تركيا) مع تفاصيل دقيقة (المخططات Masterplan، الصور، مقاطع الفيديو).</li>
+                <li><strong>بوابة المستثمرين (Investors Portal):</strong> قسم متكامل لعرض فرص الاستثمار، تحليلات السوق،
+                    وتسهيل تواصل المستثمرين مع الشركة.</li>
+                <li><strong>تأثيرات حركية تفاعلية (Animations):</strong> استخدام تقنيات Scroll-reveal والعدادات
+                    التفاعلية للإحصائيات بطريقة انسيابية وجذابة.</li>
+                <li><strong>تجاوب كامل (Responsive Design):</strong> توافق مثالي 100% مع كافة الشاشات وأجهزة الجوال
+                    (Mobile-first approach).</li>
+                <li><strong>محسن لمحركات البحث (SEO & Open Graph):</strong> هيكلة برمجية نظيفة ودلالية لضمان أفضل ظهور
+                    في جوجل وتسهيل مشاركة المشاريع.</li>
+                <li><strong>ربط تفاعلي شامل:</strong> دمج متطور لخرائط جوجل بخاصية (Dark Mode) لتتناسب مع التصميم،
+                    بالإضافة لنماذج تواصل مباشرة لتحميل كتيبات المشاريع (Brochures).</li>
+            </ul>
+        </div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+                <i class="bi bi-sliders content-box-icon"></i>
+                <h3 class="content-box-title">مميزات لوحة التحكم (الديناميكية Back-End)</h3>
+            </div>
+            <ul class="feature-list">
+                <li><strong>نظام إدارة شامل للمشاريع العقارية:</strong> لوحة تحكم متطورة تتيح إضافة، تعديل، أو إخفاء
+                    المشاريع بكل تفاصيلها (الموقع، الحالة، المرافق، الإحداثيات).</li>
+                <li><strong>إدارة متقدمة للوسائط والمرفقات:</strong> رفع وإدارة معارض الصور (Gallery)، الصور البانورامية
+                    للمخططات، الروابط للفيديوهات، وملفات (PDF) الخاصة بكتيبات المشاريع القابلة للتحميل.</li>
+                <li><strong>إدارة تصنيفات الدول والمناطق:</strong> نظام يتيح فرز وتصنيف المشاريع بناءً على الدولة (مصر،
+                    تركيا، أمريكا) وربطها بالواجهة لتحديث تلقائي.</li>
+                <li><strong>إدارة الاستفسارات وطلبات الاستثمار:</strong> استقبال وتخزين كافة رسائل الزوار وطلبات
+                    الاستثمار في قاعـدة بيـانات منظمة يمكن الرجوع إليها بسهولة وتصديرها.</li>
+                <li><strong>التخصيص الديناميكي للمحتوى:</strong> إمكانية تعديل نصوص الموقع الأساسية مثل (من نحن، رسالة
+                    الشركة، إحصائيات النمو) دون الرجوع للمبرمج.</li>
+            </ul>
+        </div>
+
+        <div class="page-footer">
+            <span>برمجلي لتقنية المعلومات</span>
+            <span>الصفحة ٣</span>
+        </div>
+    </div>
+
+    <!-- 4. Screenshots (Home Page) -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">نظرة على التصميم</h2>
+            <p class="page-subtitle">الصفحة الرئيسية للموقع</p>
+        </div>
+
+        <div class="screenshot-container" style="border: none; background: transparent;">
+            <!-- ضع مسار الصورة الفعلية لالصفحة الرئيسية هنا -->
+            <img src="screen_home.png" alt="الصفحة الرئيسية">
+        </div>
+
+        <div class="page-footer">
+            <span>برمجلي لتقنية المعلومات</span>
+            <span>الصفحة ٤</span>
+        </div>
+    </div>
+
+    <!-- 5. Screenshots (Inner Pages) -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">نظرة على التصميم</h2>
+            <p class="page-subtitle">الصفحات الداخلية وعرض الخدمات</p>
+        </div>
+
+        <div class="screenshot-container" style="border: none; background: transparent;">
+            <!-- ضع مسار الصورة الفعلية للصفحات الداخلية هنا -->
+            <img src="screen_inner.png" alt="الصفحات الداخلية">
+        </div>
+
+        <div class="page-footer">
+            <span>برمجلي لتقنية المعلومات</span>
+            <span>الصفحة ٥</span>
+        </div>
+    </div>
+
+    <!-- 6. Screenshots (Dashboard) -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">نظرة على النظام</h2>
+            <p class="page-subtitle">واجهة لوحة التحكم (الداشبورد)</p>
+        </div>
+
+        <div class="screenshot-container" style="border: none; background: transparent;">
+            <!-- ضع مسار الصورة الفعلية للداشبورد هنا -->
+            <img src="screen_dash.png" alt="لوحة التحكم">
+        </div>
+
+        <div class="page-footer">
+            <span>برمجلي لتقنية المعلومات</span>
+            <span>الصفحة ٦</span>
+        </div>
+    </div>
+
+    <!-- 7. Quotation & Conclusion -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">عرض السعر والباقات</h2>
+            <p class="page-subtitle">التكاليف المالية لتفيذ المشروع بالكامل</p>
+        </div>
+
+        <div class="price-card">
+            <h3 class="price-card-title"><i class="bi bi-star-fill"></i> باقة الموقع المتكاملة</h3>
+            <div class="price-includes">
+                <div class="price-include-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>استضافة ويب قوية وسريعة (Hosting)</span>
+                </div>
+                <div class="price-include-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>حجز اسم النطاق (Domain Name)</span>
+                </div>
+                <div class="price-include-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>برمجة وتصميم الواجهات (Front-end)</span>
+                </div>
+                <div class="price-include-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span>تطوير لوحة التحكم الديناميكية (Back-end)</span>
+                </div>
+                <div class="price-include-item"
+                    style="grid-column: span 2; justify-content: center; background: rgba(0, 217, 255, 0.1); border-color: rgba(0, 217, 255, 0.4);">
+                    <i class="bi bi-headset" style="font-size: 24px;"></i>
+                    <span style="font-size: 16px; font-weight: bold; color: var(--primary-cyan);">دعم فني مجاني لمدة شهر
+                        كامل</span>
+                </div>
+            </div>
+
+            <div class="discount-badge">خصم خاص بمناسبة التعاقد</div>
+            <div class="old-price">٢٥,٠٠٠ جنيه مصري</div>
+            <div class="new-price">١٨,٠٠٠ <span class="currency">جنيه مصري</span></div>
+            <p style="color: var(--text-gray); font-size: 13px; margin-top: 10px;">السعر نهائي ويشمل جميع البنود
+                المذكورة أعلاه لإنهاء وتسليم المشروع بالكامل.</p>
+        </div>
+
+        <div class="thank-you">
+            <i class="bi bi-handshake"></i>
+            <h3 style="font-size: 22px; color: var(--text-light); margin-bottom: 5px;">شكراً لثقتكم واهتمامكم بخدماتنا
+            </h3>
+            <p style="font-size: 15px; color: var(--text-gray);">نحن في برمجلي نتطلع بشغف لبدء العمل معكم وتحويل رؤيتكم
+                إلى نجاح رقمي ملموس.</p>
+        </div>
+
+        <div class="page-footer">
+            <span>© 2026 برمجلي – Barmagly. جميع الحقوق محفوظة</span>
+            <span>الصفحة ٧</span>
+        </div>
+    </div>
+
+    <!-- 8. Portfolio -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">سابقة الأعمال والمشاريع</h2>
+            <p class="page-subtitle">نظرة على مسيرتنا في تطوير الحلول الرقمية عالمياً</p>
+        </div>
+
+        <div class="content-box">
+            <div class="content-box-header">
+                <i class="bi bi-briefcase-fill content-box-icon"></i>
+                <h3 class="content-box-title">أكثر من 6 سنوات من التميز الرقمي</h3>
+            </div>
+            <p class="content-text">
+                على مدار السنين من العمل الاحترافي والمستمر، نفذت شركة <strong>برمجلي Barmagly</strong> مشاريع برمجية
+                رائدة وقدمت حلولاً رقمية متكاملة لعملائها في 7 دول حول العالم، متبنيةً معايير الجودة والدقة السويسرية في
+                كل سطر برمجي.
+            </p>
+            <ul class="feature-list">
+                <li><strong>تنوع القطاعات المستفيدة:</strong> تطوير وتصميم أنظمة متكاملة لقطاعات التعليم، الرعاية
+                    الصحية، التجارة الإلكترونية، السياحة، المطاعم، والخدمات اللوجستية والقانونية.</li>
+                <li><strong>حلول أعمال للشركات (Enterprise-Grade):</strong> بناء منصات ضخمة، وأنظمة نقاط بيع ذكية (POS
+                    Cloud Systems)، وتطبيقات هواتف ذكية (iOS/Android) توفر الأمان والمرونة.</li>
+                <li><strong>تصميم الهويات البصرية المميزة:</strong> إعداد تجارب مستخدم (UX) وواجهات (UI) احترافية تعكس
+                    هوية العلامة التجارية وتسهل وصول العملاء لخدماتها بمثالية.</li>
+            </ul>
+        </div>
+
+        <div class="screenshot-container"
+            style="border: 2px dashed rgba(0, 217, 255, 0.4); background: rgba(0, 217, 255, 0.02); height: 350px;">
+            <div class="placeholder-content" style="position: relative;">
+                <i class="bi bi-images"
+                    style="font-size: 60px; color: var(--primary-cyan); margin-bottom: 15px; display: block;"></i>
+                <span>مساحة مخصصة لإدراج لقطات من مشاريعنا السابقة (Portfolio)</span>
+                <p style="font-size: 14px; margin-top: 10px; color: var(--text-gray);">يمكن استعراض كافة أعمالنا عبر
+                    موقعنا الرسمي: <a href="http://barmagly.tech/en/portfolio"
+                        style="color: var(--primary-cyan);">barmagly.tech/portfolio</a></p>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>© 2026 برمجلي – Barmagly. جميع الحقوق محفوظة</span>
+            <span>الصفحة ٨</span>
+        </div>
+    </div>
+
+    <!-- 9. Contact -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title" style="font-size: 28px;">تواصل معنا</h2>
+            <p class="page-subtitle">نسعد بتواصلكم عبر القنوات التالية</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-box">
+                <i class="bi bi-globe"></i>
+                <div class="contact-details">
+                    <h4>الموقع الإلكتروني</h4>
+                    <p><a href="http://barmagly.tech">www.barmagly.tech</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-envelope-fill"></i>
+                <div class="contact-details">
+                    <h4>البريد الإلكتروني</h4>
+                    <p><a href="mailto:info@barmagly.tech">info@barmagly.tech</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-telephone-fill"></i>
+                <div class="contact-details">
+                    <h4>الهاتف وواتساب</h4>
+                    <p><a href="tel:+201010254819">+201010254819</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-facebook"></i>
+                <div class="contact-details">
+                    <h4>Facebook</h4>
+                    <p><a href="https://www.facebook.com/BarmaglyOfficial">@BarmaglyOfficial</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-footer">
+            <span>© 2026 برمجلي – Barmagly. جميع الحقوق محفوظة</span>
+            <span>الصفحة ٩</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض تطوير وتسويق رقمي - World Trip Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-cyan: #00D9FF;
+            --primary-purple: #9B51E0;
+            --dark-navy: #0A1628;
+            --text-light: #ffffff;
+            --text-gray: #B8C1D8;
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--dark-navy);
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            background: var(--dark-navy);
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+            padding: 25px 35px;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            background: linear-gradient(135deg, #0A1628 0%, #1a2942 50%, #0A1628 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .circuit-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            background-image:
+                linear-gradient(90deg, var(--primary-cyan) 1px, transparent 1px),
+                linear-gradient(0deg, var(--primary-cyan) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 140px;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(0, 217, 255, 0.5));
+        }
+
+        .cover-title {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .cover-subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+        }
+
+        .cover-client {
+            font-size: 24px;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .cover-image {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(155, 81, 224, 0.3);
+        }
+
+        .cover-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, var(--primary-cyan), var(--primary-purple), transparent) 1;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .page-subtitle {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Service Section */
+        .service-section {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(155, 81, 224, 0.08));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .service-icon {
+            font-size: 26px;
+            color: var(--primary-cyan);
+        }
+
+        .service-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-cyan);
+        }
+
+        .service-goal {
+            background: rgba(0, 217, 255, 0.1);
+            border-right: 3px solid var(--primary-cyan);
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .service-goal h4 {
+            font-size: 13px;
+            color: var(--primary-purple);
+            margin-bottom: 4px;
+        }
+
+        .service-goal p {
+            font-size: 11px;
+            color: var(--text-gray);
+            line-height: 1.4;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .service-list li {
+            font-size: 11px;
+            padding: 4px 0;
+            padding-right: 20px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .service-list li::before {
+            content: '\f26b';
+            font-family: 'bootstrap-icons';
+            position: absolute;
+            right: 0;
+            color: var(--primary-cyan);
+            font-size: 12px;
+        }
+
+        .service-price {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 800;
+            margin-top: 8px;
+        }
+
+        /* Table */
+        .features-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10px;
+        }
+
+        .features-table th,
+        .features-table td {
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            padding: 6px;
+            text-align: right;
+        }
+
+        .features-table th {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(155, 81, 224, 0.2));
+            color: var(--primary-cyan);
+            font-weight: 700;
+        }
+
+        .features-table td {
+            color: var(--text-gray);
+        }
+
+        h4.section-sub {
+            color: var(--primary-purple);
+            font-size: 13px;
+            margin: 8px 0 6px 0;
+        }
+
+        /* Summary Table */
+        .summary-section {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(155, 81, 224, 0.1));
+            border: 2px solid var(--primary-cyan);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            page-break-inside: avoid;
+        }
+
+        .summary-title {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        .summary-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .summary-table td {
+            padding: 8px;
+        }
+
+        .summary-table td:first-child {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .summary-table td:last-child {
+            text-align: left;
+            color: var(--primary-cyan);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .why-item {
+            background: rgba(15, 25, 35, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .why-item i {
+            font-size: 20px;
+            color: var(--primary-purple);
+        }
+
+        .why-item span {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(155, 81, 224, 0.1));
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-box i {
+            font-size: 24px;
+            color: var(--primary-cyan);
+        }
+
+        .contact-details h4 {
+            font-size: 11px;
+            color: var(--primary-purple);
+            margin-bottom: 3px;
+        }
+
+        .contact-details p {
+            font-size: 10px;
+            color: var(--text-light);
+            word-break: break-word;
+        }
+
+        .contact-details a {
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        /* Footer */
+        .page-footer {
+            position: absolute;
+            bottom: 10px;
+            left: 35px;
+            right: 35px;
+            text-align: center;
+            font-size: 9px;
+            color: var(--text-gray);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 6px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(155, 81, 224, 0.15), rgba(0, 217, 255, 0.15));
+            border-right: 4px solid var(--primary-purple);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+
+        .thank-you {
+            background: linear-gradient(135deg, rgba(155, 81, 224, 0.15), rgba(0, 217, 255, 0.15));
+            border: 2px solid var(--primary-cyan);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 12px 0;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .page {
+                margin: 0;
+                border: none;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cover Page -->
+    <div class="page cover-page">
+        <div class="circuit-overlay"></div>
+        <div class="cover-content">
+            <div class="logo-container">
+                <img src="logo (1).png" alt="Barmagly Logo">
+            </div>
+            <h1 class="cover-title">عرض تطوير وتسويق رقمي</h1>
+            <p class="cover-subtitle">مقدّم من شركة برمجلي – Barmagly</p>
+            <p class="cover-client">إلى شركة World Trip Agency</p>
+            <div class="cover-image">
+                <img src="64677e88-51b4-4035-a56b-1ea555b3378a.jpg" alt="Barmagly Solutions">
+            </div>
+        </div>
+        <div class="page-footer">
+            www.barmagly.tech | info@barmagly.tech | +201010254819
+        </div>
+    </div>
+
+    <!-- Page 1: Website Development & Dashboard -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">أولاً: تطوير وتحسين الموقع الإلكتروني</h2>
+        </div>
+
+        <div class="service-section">
+            <div class="service-header">
+                <i class="bi bi-globe2 service-icon"></i>
+                <h3 class="service-title">تطوير الموقع الإلكتروني</h3>
+            </div>
+
+            <div class="service-goal">
+                <h4><i class="bi bi-bullseye"></i> الهدف</h4>
+                <p>تحويل موقع World Trip Agency إلى منصة احترافية تساعد على جذب العملاء وزيادة الطلبات وتحسين صورة
+                    العلامة التجارية.</p>
+            </div>
+
+            <h4 class="section-sub"><i class="bi bi-list-check"></i> نطاق العمل</h4>
+            <ul class="service-list">
+                <li>إعادة تصميم واجهة الموقع بأسلوب عصري متوافق مع نشاط السياحة والسفر</li>
+                <li>تحسين تجربة المستخدم على أجهزة الجوال والكمبيوتر</li>
+                <li>تنظيم أقسام الموقع والباقات السياحية بشكل واضح</li>
+                <li>تحسين سرعة الموقع والأداء العام</li>
+                <li>تحسين هيكل الصفحات بما يتوافق مع معايير محركات البحث</li>
+            </ul>
+
+            <h4 class="section-sub"><i class="bi bi-star-fill"></i> أهم المميزات وتأثيرها</h4>
+            <table class="features-table">
+                <thead>
+                    <tr>
+                        <th>الميزة</th>
+                        <th>التأثير</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>تصميم احترافي حديث</td>
+                        <td>زيادة ثقة العملاء بالشركة</td>
+                    </tr>
+                    <tr>
+                        <td>تجربة استخدام سهلة</td>
+                        <td>تقليل معدل مغادرة الزوار</td>
+                    </tr>
+                    <tr>
+                        <td>نماذج حجز مبسطة</td>
+                        <td>زيادة عدد الطلبات</td>
+                    </tr>
+                    <tr>
+                        <td>توافق كامل مع الجوال</td>
+                        <td>الوصول إلى شريحة أكبر من العملاء</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="service-price">
+                <i class="bi bi-tag-fill"></i> تكلفة تطوير الموقع: 7,500 ريال سعودي
+            </div>
+        </div>
+
+        <div class="service-section">
+            <div class="service-header">
+                <i class="bi bi-pc-display service-icon"></i>
+                <h3 class="service-title">تطوير لوحة التحكم (لوحة الإدارة)</h3>
+            </div>
+
+            <div class="service-goal">
+                <h4><i class="bi bi-bullseye"></i> الهدف</h4>
+                <p>تمكين فريق World Trip Agency من إدارة الموقع بسهولة دون الحاجة إلى دعم تقني مستمر.</p>
+            </div>
+
+            <h4 class="section-sub"><i class="bi bi-gear-fill"></i> مميزات لوحة التحكم</h4>
+            <ul class="service-list">
+                <li>إدارة الباقات السياحية (إضافة، تعديل، حذف)</li>
+                <li>إدارة الحجوزات وطلبات العملاء</li>
+                <li>إدارة محتوى الصفحات</li>
+                <li>عرض الإحصائيات والتقارير</li>
+                <li>إدارة رسائل التواصل</li>
+                <li>لوحة تحكم واضحة وسهلة الاستخدام</li>
+            </ul>
+
+            <div class="service-price">
+                <i class="bi bi-tag-fill"></i> تكلفة لوحة التحكم: 4,500 ريال سعودي
+            </div>
+        </div>
+
+        <div class="page-footer">
+            www.barmagly.tech | info@barmagly.tech | +201010254819
+        </div>
+    </div>
+
+    <!-- Page 2: SEO & Social Media Marketing -->
+    <div class="page">
+        <div class="page-header">
+            <h2 class="page-title">ثانياً: خطط التحسين والتسويق الرقمي</h2>
+        </div>
+
+        <div class="service-section">
+            <div class="service-header">
+                <i class="bi bi-search service-icon"></i>
+                <h3 class="service-title">خطة تحسين محركات البحث (SEO) – شهرية</h3>
+            </div>
+
+            <div class="service-goal">
+                <h4><i class="bi bi-bullseye"></i> الهدف</h4>
+                <p>زيادة عدد الزيارات العضوية ورفع ترتيب موقع World Trip Agency في نتائج البحث.</p>
+            </div>
+
+            <h4 class="section-sub"><i class="bi bi-calendar-check"></i> الخطة الشهرية تشمل</h4>
+            <ul class="service-list">
+                <li>تحليل الكلمات المفتاحية المرتبطة بالسفر والسياحة</li>
+                <li>تحسين الصفحات الأساسية</li>
+                <li>كتابة أربع مقالات سياحية شهرياً</li>
+                <li>تحسين الصور والعناوين والوصف</li>
+                <li>ربط الموقع بأدوات التحليل والمتابعة</li>
+                <li>تقديم تقرير شهري بالأداء والنتائج</li>
+            </ul>
+
+            <div class="service-price">
+                <i class="bi bi-tag-fill"></i> تكلفة خطة SEO: 2,500 ريال سعودي شهرياً
+            </div>
+
+            <div class="highlight-box">
+                <i class="bi bi-info-circle-fill" style="color: var(--primary-cyan);"></i>
+                <strong>ملاحظة:</strong> يُفضّل الالتزام لمدة لا تقل عن 3 أشهر لتحقيق نتائج فعّالة
+            </div>
+        </div>
+
+        <div class="service-section">
+            <div class="service-header">
+                <i class="bi bi-badge-ad service-icon"></i>
+                <h3 class="service-title">خطة التسويق عبر وسائل التواصل الاجتماعي</h3>
+            </div>
+
+            <div style="text-align: center; margin: 8px 0;">
+                <span style="color: var(--primary-cyan); font-size: 12px;">
+                    <i class="bi bi-instagram"></i> Instagram •
+                    <i class="bi bi-tiktok"></i> TikTok •
+                    <i class="bi bi-snapchat"></i> Snapchat
+                </span>
+            </div>
+
+            <div class="service-goal">
+                <h4><i class="bi bi-bullseye"></i> الهدف</h4>
+                <p>زيادة الوعي بالعلامة التجارية وتحويل المتابعين إلى عملاء فعليين.</p>
+            </div>
+
+            <h4 class="section-sub"><i class="bi bi-camera-video-fill"></i> تفاصيل الخطة</h4>
+            <ul class="service-list">
+                <li>إعداد استراتيجية محتوى مناسبة لقطاع السياحة</li>
+                <li>إنتاج 12 إلى 16 فيديو شهرياً</li>
+                <li>محتوى يعرض الوجهات السياحية والعروض والنصائح</li>
+                <li>توحيد الهوية البصرية للمحتوى</li>
+                <li>توجيه مباشر للتواصل والحجز</li>
+            </ul>
+
+            <div class="service-price">
+                <i class="bi bi-tag-fill"></i> تكلفة إدارة حسابات التواصل: 3,000 ريال سعودي شهرياً
+            </div>
+
+            <div class="highlight-box">
+                <i class="bi bi-exclamation-triangle-fill" style="color: var(--primary-purple);"></i>
+                <strong>ملاحظة:</strong> لا تشمل تكلفة الإعلانات الممولة
+            </div>
+        </div>
+
+        <div class="page-footer">
+            www.barmagly.tech | info@barmagly.tech | +201010254819
+        </div>
+    </div>
+
+    <!-- Page 3: Summary & Contact -->
+    <div class="page">
+        <div class="summary-section">
+            <h2 class="summary-title"><i class="bi bi-receipt"></i> ملخص التكاليف</h2>
+            <table class="summary-table">
+                <tr>
+                    <td><i class="bi bi-globe2"></i> تطوير الموقع</td>
+                    <td>7,500 ريال سعودي</td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-pc-display"></i> تطوير لوحة التحكم</td>
+                    <td>4,500 ريال سعودي</td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-search"></i> SEO شهري</td>
+                    <td>2,500 ريال سعودي</td>
+                </tr>
+                <tr>
+                    <td><i class="bi bi-badge-ad"></i> تسويق سوشيال ميديا شهري</td>
+                    <td>3,000 ريال سعودي</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="page-header" style="margin-top: 20px;">
+            <h2 class="page-title"><i class="bi bi-award-fill"></i> لماذا برمجلي؟</h2>
+        </div>
+
+        <div class="why-us">
+            <div class="why-item">
+                <i class="bi bi-trophy-fill"></i>
+                <span>خبرة في تطوير الأنظمة والمواقع المخصصة</span>
+            </div>
+            <div class="why-item">
+                <i class="bi bi-puzzle-fill"></i>
+                <span>حلول تقنية وتسويقية متكاملة</span>
+            </div>
+            <div class="why-item">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>التزام بالجودة وسرعة التنفيذ</span>
+            </div>
+            <div class="why-item">
+                <i class="bi bi-headset"></i>
+                <span>دعم فني وتطوير مستمر</span>
+            </div>
+        </div>
+
+        <div class="page-header" style="margin-top: 20px;">
+            <h2 class="page-title"><i class="bi bi-envelope-at-fill"></i> معلومات التواصل</h2>
+            <p class="page-subtitle">شركة برمجلي – Barmagly</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-box">
+                <i class="bi bi-globe"></i>
+                <div class="contact-details">
+                    <h4>الموقع الإلكتروني</h4>
+                    <p><a href="http://barmagly.tech">www.barmagly.tech</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-envelope-fill"></i>
+                <div class="contact-details">
+                    <h4>البريد الإلكتروني</h4>
+                    <p><a href="mailto:info@barmagly.tech">info@barmagly.tech</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-telephone-fill"></i>
+                <div class="contact-details">
+                    <h4>الهاتف وواتساب</h4>
+                    <p><a href="tel:+201010254819">+201010254819</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-facebook"></i>
+                <div class="contact-details">
+                    <h4>Facebook</h4>
+                    <p><a href="https://www.facebook.com/BarmaglyOfficial">@BarmaglyOfficial</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-linkedin"></i>
+                <div class="contact-details">
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/company/barmagly">linkedin.com/company/barmagly</a></p>
+                </div>
+            </div>
+
+            <div class="contact-box">
+                <i class="bi bi-geo-alt-fill"></i>
+                <div class="contact-details">
+                    <h4>الموقع</h4>
+                    <p>القاهرة، مصر</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="thank-you">
+            <i class="bi bi-hand-thumbs-up-fill" style="font-size: 20px; color: var(--primary-cyan);"></i><br>
+            <strong style="font-size: 16px; color: var(--primary-cyan);">شكراً لاهتمامك بخدماتنا</strong><br>
+            <span style="font-size: 12px;">نتطلع للعمل معكم وتحقيق أهداف World Trip Agency الرقمية</span>
+        </div>
+
+        <div class="page-footer">
+            © 2026 Barmagly. جميع الحقوق محفوظة | All Rights Reserved
+        </div>
+    </div>
+
+</body>
+
+</html>

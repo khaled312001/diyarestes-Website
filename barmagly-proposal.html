@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عرض فني ومالي – موقع ديار العقارية | برمجلي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0A1628;
+            --navy2: #0E1F35;
+            --navy3: #152238;
+            --gold: #C9A84C;
+            --gold2: #E5C97A;
+            --gold3: #A6863D;
+            --white: #ffffff;
+            --gray: #B8C1D8;
+            --gray2: rgba(184, 193, 216, 0.5);
+        }
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #fff;
+            color: var(--navy);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* PAGE SHELL */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            overflow: hidden;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        /* COVER */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 297mm;
+            background: #02050B;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -10%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 60%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(10, 22, 40, 0.8) 0%, transparent 60%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        .cover-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .cover-glass {
+            position: relative;
+            z-index: 2;
+            width: 85%;
+            max-width: 800px;
+            background: rgba(10, 16, 28, 0.5);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            text-align: center;
+        }
+
+        .cover-from {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, rgba(201, 168, 76, 0.1) 0%, rgba(201, 168, 76, 0.02) 100%);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 50px;
+            padding: 8px 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-from .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .cover-from span {
+            font-size: 14px;
+            color: var(--gold2);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .barmagly-logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .b-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #FFDF73 0%, var(--gold) 50%, var(--gold3) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--navy);
+            box-shadow: 0 10px 25px rgba(201, 168, 76, 0.3);
+            margin-bottom: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .b-name {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .b-sub {
+            font-size: 10px;
+            color: var(--gold2);
+            letter-spacing: 5px;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        .cover-divider {
+            width: 120px;
+            height: 2px;
+            margin: 0 auto 30px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .cover-presents {
+            font-size: 15px;
+            color: var(--gray);
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .cover-title {
+            font-size: 52px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: var(--white);
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cover-title .gold {
+            background: linear-gradient(to right, #FFF4D0, var(--gold), #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--gold);
+        }
+
+        .cover-sub {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cover-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .c-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .c-badge i {
+            color: var(--gold);
+        }
+
+        .cover-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+        }
+
+        .c-meta-item {
+            text-align: center;
+        }
+
+        .c-meta-val {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--gold);
+            text-shadow: 0 4px 10px rgba(201, 168, 76, 0.2);
+        }
+
+        .c-meta-lbl {
+            font-size: 11px;
+            color: var(--gray);
+            letter-spacing: 1px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            right: 40px;
+            padding: 18px 30px;
+            background: rgba(10, 16, 28, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--gray);
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* INNER PAGES */
+        .inner {
+            padding: 34px 42px 68px;
+        }
+
+        .ph {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .ph-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .ph-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(201, 168, 76, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .ph-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .ph-sub {
+            font-size: 12px;
+            color: var(--gold2);
+            margin-top: 3px;
+        }
+
+        .ph-badge {
+            font-size: 11px;
+            color: var(--gray);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 5px 13px;
+            border-radius: 20px;
+        }
+
+        /* BOX */
+        .box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .box-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--gold2);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .box-title i {
+            color: var(--gold);
+        }
+
+        .body-text {
+            font-size: 13.5px;
+            color: var(--gray);
+            line-height: 1.9;
+        }
+
+        /* FEATURE LIST */
+        .flist {
+            list-style: none;
+        }
+
+        .flist li {
+            font-size: 13px;
+            color: var(--white);
+            padding: 6px 0 6px 0;
+            padding-right: 22px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.7;
+        }
+
+        .flist li:last-child {
+            border-bottom: none;
+        }
+
+        .flist li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 8px;
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .flist li strong {
+            color: var(--gold2);
+        }
+
+        /* GRIDS */
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .grid3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        /* STAT CARD */
+        .stat-card {
+            background: rgba(201, 168, 76, 0.06);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 10px;
+            padding: 16px 12px;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .stat-lbl {
+            font-size: 11px;
+            color: var(--gray);
+            letter-spacing: 1px;
+            margin-top: 3px;
+        }
+
+        /* PORTFOLIO CARD */
+        .port-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
+            padding: 13px 15px;
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+
+        .port-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 7px;
+        }
+
+        .port-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .port-country {
+            font-size: 11px;
+            color: var(--gold2);
+            margin-top: 2px;
+        }
+
+        .port-type {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--gold);
+            padding: 3px 9px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .port-desc {
+            font-size: 12px;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .port-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .port-tag {
+            font-size: 10px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* COUNTRY HEADER */
+        .ch {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            padding: 13px 18px;
+            background: linear-gradient(90deg, rgba(201, 168, 76, 0.1), transparent);
+            border-right: 4px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .ch-flag {
+            font-size: 24px;
+        }
+
+        .ch-name {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .ch-desc {
+            font-size: 11px;
+            color: var(--gold2);
+            margin-top: 2px;
+        }
+
+        /* PROJECT CARD */
+        .proj-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.18);
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .proj-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .proj-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .proj-loc {
+            font-size: 11px;
+            color: var(--gold2);
+            margin-top: 3px;
+        }
+
+        .proj-type-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--gold2);
+            padding: 3px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .proj-desc {
+            font-size: 12.5px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .proj-stats {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .proj-stat {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 11.5px;
+            color: var(--white);
+        }
+
+        .proj-stat i {
+            color: var(--gold);
+            font-size: 10px;
+        }
+
+        .proj-stat strong {
+            color: var(--gold2);
+        }
+
+        /* SCREENSHOT PAGE */
+        .screen-page {
+            background: var(--navy);
+            padding: 28px 36px 68px;
+        }
+
+        .screen-wrap {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .screen-wrap img {
+            width: 100%;
+            display: block;
+            height: auto;
+            max-height: 240mm;
+            object-fit: contain;
+            object-position: top center;
+        }
+
+        .screen-browser {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 9px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .sb-dots {
+            display: flex;
+            gap: 5px;
+        }
+
+        .sb-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .sb-dot.r {
+            background: #ff5f56;
+        }
+
+        .sb-dot.y {
+            background: #ffbd2e;
+        }
+
+        .sb-dot.g {
+            background: #27c93f;
+        }
+
+        .sb-bar {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-size: 11px;
+            color: var(--gray2);
+            text-align: center;
+            direction: ltr;
+        }
+
+        .screen-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .s-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .s-tag i {
+            color: var(--gold);
+        }
+
+        /* TWO SCREENS PER PAGE */
+        .dual-screen {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 0;
+        }
+
+        .dual-screen .screen-wrap img {
+            max-height: 180mm;
+        }
+
+        /* ADMIN GRID */
+        .admin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .admin-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.15);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .admin-card-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold2);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .admin-card-title i {
+            color: var(--gold);
+        }
+
+        .admin-card ul {
+            list-style: none;
+        }
+
+        .admin-card ul li {
+            font-size: 11.5px;
+            color: var(--gray);
+            padding: 4px 0 4px 0;
+            padding-right: 14px;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .admin-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .admin-card ul li::before {
+            content: '›';
+            position: absolute;
+            right: 0;
+            top: 4px;
+            color: var(--gold);
+            font-size: 13px;
+        }
+
+        /* TECH PILLS */
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .tech-pill i {
+            color: var(--gold);
+        }
+
+        /* TIMELINE */
+        .tl-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .tl-step {
+            min-width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .tl-body {
+            padding-top: 5px;
+        }
+
+        .tl-body h4 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 2px;
+        }
+
+        .tl-body p {
+            font-size: 11.5px;
+            color: var(--gray);
+        }
+
+        .tl-dur {
+            display: inline-block;
+            margin-top: 3px;
+            background: rgba(201, 168, 76, 0.1);
+            border-radius: 4px;
+            padding: 2px 9px;
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--gold2);
+        }
+
+        /* PRICE */
+        .price-big {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.02));
+            border: 2px solid rgba(201, 168, 76, 0.35);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: rgba(255, 71, 87, 0.15);
+            border: 1px solid rgba(255, 71, 87, 0.4);
+            color: #ff6b7a;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .price-old {
+            font-size: 17px;
+            color: #ff6b7a;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+
+        .price-new {
+            font-size: 46px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .price-cur {
+            font-size: 17px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .price-note {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+
+        .includes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin: 16px 0;
+        }
+
+        .inc-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 8px;
+            padding: 10px 13px;
+            font-size: 12.5px;
+            color: var(--white);
+        }
+
+        .inc-item i {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .contact-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.18);
+            border-radius: 10px;
+            padding: 14px 16px;
+        }
+
+        .contact-box .ci {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: rgba(201, 168, 76, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-box h4 {
+            font-size: 11px;
+            color: var(--gold2);
+            margin-bottom: 2px;
+        }
+
+        .contact-box p {
+            font-size: 12.5px;
+            color: var(--white);
+            word-break: break-word;
+        }
+
+        .contact-box a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .thankyou {
+            background: linear-gradient(135deg, rgba(201, 168, 76, 0.06), rgba(201, 168, 76, 0.02));
+            border: 1px solid rgba(201, 168, 76, 0.25);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .thankyou i {
+            font-size: 32px;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .thankyou h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .thankyou p {
+            font-size: 12.5px;
+            color: var(--gray);
+        }
+
+        /* PAGE FOOTER */
+        .pf {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 11px 42px;
+            background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(201, 168, 76, 0.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: var(--gray2);
+        }
+
+        .pf .pnum {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        /* SERVICES */
+        .svc-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(201, 168, 76, 0.18);
+            border-radius: 10px;
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .svc-num {
+            font-size: 28px;
+            font-weight: 900;
+            color: rgba(201, 168, 76, 0.15);
+            line-height: 1;
+        }
+
+        .svc-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--gold2);
+            margin-bottom: 6px;
+        }
+
+        .svc-desc {
+            font-size: 12.5px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                size: A4 portrait !important;
+                margin: 0 !important;
+            }
+
+            html,
+            body {
+                width: 100% !important;
+                height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                background: #02050B !important;
+            }
+
+            .page {
+                width: 210mm !important;
+                height: 297mm !important;
+                min-height: 297mm !important;
+                max-height: 297mm !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                page-break-after: always !important;
+                page-break-inside: avoid !important;
+                overflow: hidden !important;
+            }
+
+            /* Adjust cover exactly for A4 Center */
+            .cover {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                height: 297mm !important;
+            }
+
+            /* Fix Chrome Print bug with backdrop-filter causing cutoffs */
+            .cover-glass {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(10, 16, 28, 0.95) !important;
+                transform: scale(0.95) !important;
+            }
+
+            .cover-footer {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                background: rgba(10, 16, 28, 0.95) !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════ PAGE 1 — COVER ═══════ -->
+    <div class="page cover">
+        <div class="cover-grid"></div>
+
+        <div class="cover-glass">
+            <div class="cover-from">
+                <div class="dot"></div><span>عرض فني ومالي رسمي – مقدم من </span>
+            </div>
+
+            <div class="barmagly-logo-box">
+                <div class="b-icon">B</div>
+                <div class="b-name">Barmagly</div>
+                <div class="b-sub">Swiss Precision · Global Innovation</div>
+            </div>
+
+
+            <p class="cover-presents">تقدم بكل فخر واعتزاز هذا العرض المتكامل لـ</p>
+            <h1 class="cover-title">موقع <span class="gold">ديار العقارية</span></h1>
+            <p class="cover-sub">DIYAR Estates — International Real Estate</p>
+
+            <div class="cover-badges">
+                <div class="c-badge"><i class="fas fa-gem"></i> حلول برمجية فاخرة</div>
+                <div class="c-badge"><i class="fas fa-mobile-alt"></i> تصميم متجاوب ١٠٠٪</div>
+                <div class="c-badge"><i class="fas fa-shield-alt"></i> حماية وأمان عالي</div>
+            </div>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(201, 168, 76, 0.2);">
+                <span style="font-size: 15px; font-weight: 700; color: var(--gold); letter-spacing: 0.5px;">تصميم مبدئي
+                    للموقع الإلكتروني</span><br>
+                <span
+                    style="font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); display: inline-block; margin-top: 6px;">www.diyarestes.com</span>
+            </div>
+        </div>
+
+        <div class="cover-footer">
+            <span><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-left:8px;"></i>Zürich, Switzerland ·
+                CHE-154.312.079</span>
+            <span><i class="fas fa-envelope" style="color:var(--gold);margin-left:8px;"></i>info@barmagly.tech |
+                +201010254819</span>
+        </div>
+    </div>
+
+
+    <!-- ═══════ PAGE 2 — ABOUT BARMAGLY ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-building"></i></div>
+                <div>
+                    <div class="ph-title">من نحن — برمجلي</div>
+                    <div class="ph-sub">Swiss Licensed Software Company · CHE-154.312.079</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢</div>
+        </div>
+        <div class="box"
+            style="background:linear-gradient(135deg,rgba(201,168,76,0.06),transparent);border-color:rgba(201,168,76,0.3);margin-bottom:14px;">
+            <p class="body-text" style="color:var(--white);font-size:14px;">
+                <strong style="color:var(--gold2);">برمجلي (Barmagly)</strong> شركة برمجيات سويسرية مرخصة رسمياً، مقرها
+                مدينة زيوريخ، متخصصة في بناء حلول رقمية احترافية للأعمال التجارية حول العالم. نجمع بين الدقة السويسرية
+                والإبداع الرقمي لتقديم منتجات تقنية تفوق توقعات عملائنا. يضم فريقنا أكثر من <strong
+                    style="color:var(--gold2);">١٥ متخصصاً</strong> خبيراً في التصميم والتطوير والهندسة البرمجية.
+            </p>
+        </div>
+        <div class="grid3" style="margin-bottom:14px;">
+            <div class="stat-card">
+                <div class="stat-val">١٥٠+</div>
+                <div class="stat-lbl">مشروع منجز</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">٦+</div>
+                <div class="stat-lbl">سنوات خبرة</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">٧</div>
+                <div class="stat-lbl">دول نخدمها</div>
+            </div>
+        </div>
+        <div class="grid2" style="margin-bottom:14px;">
+            <div class="box">
+                <div class="box-title"><i class="fas fa-globe-europe"></i>تواجدنا الجغرافي</div>
+                <ul class="flist">
+                    <li><strong>سويسرا (المقر الرئيسي)</strong> – زيوريخ</li>
+                    <li><strong>فرنسا</strong> – أوروبا الغربية</li>
+                    <li><strong>الإمارات والسعودية</strong> – الخليج العربي</li>
+                    <li><strong>مصر والعراق</strong> – شمال أفريقيا والمشرق</li>
+                    <li><strong>عالمياً</strong> – مشاريع ريموت دولية</li>
+                </ul>
+            </div>
+            <div class="box">
+                <div class="box-title"><i class="fas fa-cogs"></i>خدماتنا الرئيسية</div>
+                <ul class="flist">
+                    <li><strong>تطوير مواقع ويب</strong> احترافية</li>
+                    <li><strong>تطبيقات موبايل</strong> iOS & Android</li>
+                    <li><strong>تصميم UI/UX</strong> وهوية بصرية</li>
+                    <li><strong>أنظمة POS</strong> ومتعدد الفروع</li>
+                    <li><strong>حلول ERP</strong> للمؤسسات الكبرى</li>
+                    <li><strong>تسويق رقمي</strong> ومبيعات</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title"><i class="fas fa-industry"></i>القطاعات التي نخدمها</div>
+            <div class="tech-grid">
+                <div class="tech-pill"><i class="fas fa-home"></i>عقارات وضيافة</div>
+                <div class="tech-pill"><i class="fas fa-graduation-cap"></i>تعليم وأكاديميات</div>
+                <div class="tech-pill"><i class="fas fa-heartbeat"></i>صحة وطب</div>
+                <div class="tech-pill"><i class="fas fa-shopping-cart"></i>تجارة إلكترونية</div>
+                <div class="tech-pill"><i class="fas fa-utensils"></i>مطاعم وكافيهات</div>
+                <div class="tech-pill"><i class="fas fa-plane"></i>سياحة وسفر</div>
+                <div class="tech-pill"><i class="fas fa-truck"></i>لوجستيات وشحن</div>
+                <div class="tech-pill"><i class="fas fa-balance-scale"></i>خدمات قانونية</div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 3 — BARMAGLY SERVICES ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-concierge-bell"></i></div>
+                <div>
+                    <div class="ph-title">خدماتنا الاحترافية</div>
+                    <div class="ph-sub">Strategic Digital Solutions — Enterprise-Grade Systems</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣</div>
+        </div>
+        <div class="svc-card">
+            <div class="svc-num">01</div>
+            <div class="svc-title"><i class="fas fa-laptop-code" style="color:var(--gold);margin-left:8px;"></i>تطوير
+                مواقع الويب والتصميم</div>
+            <div class="svc-desc">نبني مواقع ويب عالية الأداء باستخدام أحدث التقنيات والأطر البرمجية المخصصة. كل موقع
+                نطوّره مُهيَّأ للسرعة والأمان وتجربة المستخدم الاستثنائية. من المواقع التعريفية إلى المنصات الضخمة
+                متعددة اللغات — نقدم حلولاً شاملة تتناسب مع أهداف عملائنا.</div>
+        </div>
+        <div class="svc-card">
+            <div class="svc-num">02</div>
+            <div class="svc-title"><i class="fas fa-mobile-alt" style="color:var(--gold);margin-left:8px;"></i>تطوير
+                تطبيقات الموبايل</div>
+            <div class="svc-desc">نصمم ونطور تطبيقات موبايل احترافية لنظامي Android وiOS. نستخدم أحدث الأطر البرمجية
+                لضمان تجربة مستخدم سلسة وأداء عالٍ، مع تكامل كامل مع الخدمات السحابية والإشعارات الفورية وأنظمة الدفع
+                الإلكتروني.</div>
+        </div>
+        <div class="svc-card">
+            <div class="svc-num">03</div>
+            <div class="svc-title"><i class="fas fa-cash-register" style="color:var(--gold);margin-left:8px;"></i>أنظمة
+                نقاط البيع POS والـ ERP</div>
+            <div class="svc-desc">نطور أنظمة POS وERP قوية ومخصصة لمتاجر التجزئة والمطاعم والصيدليات وصالونات التجميل
+                ومراكز التسوق. تشمل: إدارة المخزون، تقارير المبيعات التفصيلية، إدارة متعدد الفروع، التكامل مع التجارة
+                الإلكترونية، وأنظمة الفواتير الإلكترونية.</div>
+        </div>
+        <div class="svc-card">
+            <div class="svc-num">04</div>
+            <div class="svc-title"><i class="fas fa-palette" style="color:var(--gold);margin-left:8px;"></i>تصميم UI/UX
+                والهوية البصرية</div>
+            <div class="svc-desc">نبني هويات بصرية متكاملة وتجارب مستخدم استثنائية تترك أثراً دائماً. من تصميم الشعارات
+                والأنظمة البصرية إلى بروتوتايبات التطبيقات والمواقع — نضمن أن يعكس التصميم قيم علامتكم التجارية ويجذب
+                جمهوركم المستهدف.</div>
+        </div>
+        <div class="svc-card">
+            <div class="svc-num">05</div>
+            <div class="svc-title"><i class="fas fa-chart-line" style="color:var(--gold);margin-left:8px;"></i>حلول
+                التسويق الرقمي والمبيعات</div>
+            <div class="svc-desc">نقدم خدمات تسويق رقمي متكاملة تشمل: تحسين محركات البحث SEO، إدارة حملات الإعلانات
+                المدفوعة، التسويق عبر وسائل التواصل الاجتماعي، أتمتة التسويق، وتحليلات البيانات — كل ذلك لضمان نمو
+                مستدام لأعمالكم.</div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 4 — PORTFOLIO SWITZERLAND & FRANCE ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <div class="ph-title">أعمالنا ومشاريعنا المنجزة</div>
+                    <div class="ph-sub">سويسرا وفرنسا — Switzerland & France</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٤</div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇨🇭</div>
+            <div>
+                <div class="ch-name">سويسرا — Switzerland</div>
+                <div class="ch-desc">مشاريع القانون والتعليم والمطاعم والتطبيقات</div>
+            </div>
+        </div>
+        <div class="grid2" style="margin-bottom:14px;">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Aman Law</div>
+                        <div class="port-country">🇨🇭 سويسرا — موقع مكتب محاماة</div>
+                    </div>
+                    <div class="port-type">WEBSITE</div>
+                </div>
+                <div class="port-desc">موقع مكتب محاماة متخصص في الخدمات القانونية بسويسرا. يتضمن نظام حجز استشارات وعرض
+                    الخدمات القانونية المتنوعة بواجهة احترافية فاخرة.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">PHP</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Swiss Bridge Academy</div>
+                        <div class="port-country">🇨🇭 سويسرا — منصة تعليمية</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">منصة أكاديمية تعليمية متكاملة مع LMS احترافي. تشمل الدورات التدريبية والشهادات
+                    وإدارة الطلاب بمعايير سويسرية راقية.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Swiss Beauty Salon App</div>
+                        <div class="port-country">🇨🇭 سويسرا — تطبيق موبايل</div>
+                    </div>
+                    <div class="port-type">APP</div>
+                </div>
+                <div class="port-desc">تطبيق إدارة صالون تجميل متكامل في سويسرا. يشمل حجز المواعيد وإدارة العملاء وأنظمة
+                    الدفع والإشعارات الذكية.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Flutter</div>
+                    <div class="port-tag">Firebase</div>
+                    <div class="port-tag">Node.js</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Swiss Restaurant POS & Web</div>
+                        <div class="port-country">🇨🇭 سويسرا — POS + موقع</div>
+                    </div>
+                    <div class="port-type">POS</div>
+                </div>
+                <div class="port-desc">نظام POS متكامل لمطعم سويسري مع موقع طلب أونلاين. يشمل إدارة الطاولات وشاشة
+                    المطبخ وإصدار الفواتير.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">.NET</div>
+                    <div class="port-tag">SQL Server</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇫🇷</div>
+            <div>
+                <div class="ch-name">فرنسا — France</div>
+                <div class="ch-desc">مشاريع البناء والمطاعم في السوق الأوروبي</div>
+            </div>
+        </div>
+        <div class="grid2">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">BN Batiment</div>
+                        <div class="port-country">🇫🇷 فرنسا — شركة مقاولات</div>
+                    </div>
+                    <div class="port-type">WEBSITE</div>
+                </div>
+                <div class="port-desc">موقع شركة بناء ومقاولات في فرنسا. يعرض خدمات البناء والتجديد مع بورتفوليو
+                    المشاريع ونظام طلب العروض.</div>
+                <div class="port-tags">
+                    <div class="port-tag">WordPress</div>
+                    <div class="port-tag">PHP</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">King Kebab Le Pouzin</div>
+                        <div class="port-country">🇫🇷 فرنسا — مطعم</div>
+                    </div>
+                    <div class="port-type">WEBSITE</div>
+                </div>
+                <div class="port-desc">موقع ونظام طلبات لمطعم King Kebab في فرنسا. يشمل قائمة تفاعلية ونظام طلب إلكتروني
+                    متكامل.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">Vue.js</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٤</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 5 — PORTFOLIO UAE & SAUDI ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <div class="ph-title">أعمالنا — الإمارات والسعودية</div>
+                    <div class="ph-sub">UAE & Saudi Arabia Projects Portfolio</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٥</div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇦🇪</div>
+            <div>
+                <div class="ch-name">الإمارات العربية المتحدة — UAE</div>
+                <div class="ch-desc">طب وتجارة إلكترونية وتعليم وPOS</div>
+            </div>
+        </div>
+        <div class="grid2" style="margin-bottom:14px;">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Smile House Dental Center</div>
+                        <div class="port-country">🇦🇪 الإمارات — مركز أسنان</div>
+                    </div>
+                    <div class="port-type">WEBSITE</div>
+                </div>
+                <div class="port-desc">موقع مركز أسنان متكامل مع حجز ذكي وعرض خدمات طبية وسجلات مرضى مع داشبورد إداري.
+                </div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Bloomingdales Arabia</div>
+                        <div class="port-country">🇦🇪 الإمارات — تجارة إلكترونية</div>
+                    </div>
+                    <div class="port-type">E-COMMERCE</div>
+                </div>
+                <div class="port-desc">منصة تجارة إلكترونية متعددة اللغات لعلامة Bloomingdales في المنطقة العربية بأداء
+                    عالي وتصميم احترافي.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Next.js</div>
+                    <div class="port-tag">GraphQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Ejada Education</div>
+                        <div class="port-country">🇦🇪 الإمارات — تعليم إلكتروني</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">منصة تعليم عن بعد متكاملة مع CMS تعليمي واختبارات وشهادات رقمية وإدارة كاملة
+                    للطلاب والمعلمين.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">Vue.js</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Sharaf DG</div>
+                        <div class="port-country">🇦🇪 الإمارات — ميغا ستور</div>
+                    </div>
+                    <div class="port-type">E-COMMERCE</div>
+                </div>
+                <div class="port-desc">منصة تجارة إلكترونية ضخمة لسلسلة Sharaf DG للإلكترونيات. نظام متعدد اللغات عالي
+                    الأداء مع بحث متقدم.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">Elasticsearch</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇸🇦</div>
+            <div>
+                <div class="ch-name">المملكة العربية السعودية — Saudi Arabia</div>
+                <div class="ch-desc">سياحة وأزياء ولوجستيات ومياه وتعليم</div>
+            </div>
+        </div>
+        <div class="grid2">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">World Trip Agency</div>
+                        <div class="port-country">🇸🇦 السعودية — سياحة وسفر</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">منصة حجز سفر وسياحة متكاملة. تشمل حجز رحلات وفنادق وبرامج سياحية ونظام دفع آمن.
+                </div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Wasela</div>
+                        <div class="port-country">🇸🇦 السعودية — لوجستيات</div>
+                    </div>
+                    <div class="port-type">APP</div>
+                </div>
+                <div class="port-desc">منصة شحن وتوصيل ذكية مع تتبع لحظي للشحنات وإدارة السائقين وتقارير تشغيلية شاملة.
+                </div>
+                <div class="port-tags">
+                    <div class="port-tag">React Native</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Makkah Water</div>
+                        <div class="port-country">🇸🇦 السعودية — إدارة مياه</div>
+                    </div>
+                    <div class="port-type">SYSTEM</div>
+                </div>
+                <div class="port-desc">نظام إدارة متكامل لمؤسسة مياه مكة. يشمل إدارة الاشتراكات والتوزيع والتقارير
+                    الإدارية الشاملة.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">Vue.js</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Green Arrow Academy</div>
+                        <div class="port-country">🇸🇦 السعودية — أكاديمية</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">منصة تعليمية متكاملة مع LMS وإدارة دورات تدريبية واختبارات إلكترونية وشهادات
+                    معتمدة.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">Vue.js</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٥</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 6 — PORTFOLIO EGYPT IRAQ GLOBAL ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-briefcase"></i></div>
+                <div>
+                    <div class="ph-title">أعمالنا — مصر والعراق وعالمياً</div>
+                    <div class="ph-sub">Egypt · Iraq · Global Projects</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٦</div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇪🇬</div>
+            <div>
+                <div class="ch-name">مصر — Egypt</div>
+                <div class="ch-desc">تجارة إلكترونية وتعليم وPOS</div>
+            </div>
+        </div>
+        <div class="grid2" style="margin-bottom:14px;">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Mizanoo Store</div>
+                        <div class="port-country">🇪🇬 مصر — متجر إلكتروني</div>
+                    </div>
+                    <div class="port-type">E-COMMERCE</div>
+                </div>
+                <div class="port-desc">متجر إلكتروني متكامل في مصر مع عربة تسوق ونظام دفع وإدارة منتجات احترافية
+                    وداشبورد إداري.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Infix LMS</div>
+                        <div class="port-country">🇪🇬 مصر — منصة تعليمية</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">نظام LMS متكامل يشمل إدارة الطلاب والمعلمين والدورات والحضور والامتحانات بمنهجية
+                    تعليمية احترافية.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">PHP</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🇮🇶</div>
+            <div>
+                <div class="ch-name">العراق — Iraq</div>
+                <div class="ch-desc">منصة عقارية متكاملة</div>
+            </div>
+        </div>
+        <div style="margin-bottom:14px;">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Ghiarati Real Estate</div>
+                        <div class="port-country">🇮🇶 العراق — منصة عقارية</div>
+                    </div>
+                    <div class="port-type">WEBSITE</div>
+                </div>
+                <div class="port-desc">منصة عقارية متكاملة في العراق لعرض وبيع وتأجير العقارات مع خرائط تفاعلية وبحث
+                    متقدم وإدارة شاملة.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">MongoDB</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ch">
+            <div class="ch-flag">🌐</div>
+            <div>
+                <div class="ch-name">عالمياً — Global Projects</div>
+                <div class="ch-desc">سيارات وطعام وصحة وخدمات متنوعة</div>
+            </div>
+        </div>
+        <div class="grid2">
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">CarBaz Platform</div>
+                        <div class="port-country">🌐 عالمي — منصة سيارات</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">منصة متكاملة لشراء وبيع السيارات وقطع الغيار مع بحث متقدم وإدارة إعلانات
+                    احترافية.</div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">FoodKing Ordering</div>
+                        <div class="port-country">🌐 عالمي — طلبات طعام</div>
+                    </div>
+                    <div class="port-type">WEB APP</div>
+                </div>
+                <div class="port-desc">نظام طلبات طعام احترافي مع واجهة مطعم متكاملة وسلة مشتريات وإدارة قائمة وتتبع
+                    الطلبات.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">Vue.js</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">InfyCare Medical</div>
+                        <div class="port-country">🌐 عالمي — نظام طبي</div>
+                    </div>
+                    <div class="port-type">SYSTEM</div>
+                </div>
+                <div class="port-desc">نظام طبي متكامل لإدارة العيادات والمستشفيات. يشمل سجلات المرضى والحجز والوصفات
+                    والتقارير.</div>
+                <div class="port-tags">
+                    <div class="port-tag">Laravel</div>
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">MySQL</div>
+                </div>
+            </div>
+            <div class="port-card">
+                <div class="port-header">
+                    <div>
+                        <div class="port-name">Doxe Health Management</div>
+                        <div class="port-country">🌐 عالمي — إدارة صحية</div>
+                    </div>
+                    <div class="port-type">SYSTEM</div>
+                </div>
+                <div class="port-desc">نظام إدارة طبية احترافي مع EMR وجدولة مواعيد وإدارة الأطباء وتقارير إدارية شاملة.
+                </div>
+                <div class="port-tags">
+                    <div class="port-tag">React</div>
+                    <div class="port-tag">Node.js</div>
+                    <div class="port-tag">PostgreSQL</div>
+                </div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٦</span></div>
+    </div>
+
+
+
+
+
+
+
+    <!-- ═══════ PAGE 7 — ABOUT DIYAR PROJECT ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-city"></i></div>
+                <div>
+                    <div class="ph-title">المشروع — موقع ديار العقارية</div>
+                    <div class="ph-sub">DIYAR Estates · International Real Estate Development & Investment</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٧</div>
+        </div>
+        <div class="box"
+            style="background:linear-gradient(135deg,rgba(201,168,76,0.07),transparent);border-color:rgba(201,168,76,0.3);margin-bottom:14px;">
+            <p class="body-text" style="color:var(--white);font-size:13.5px;">
+                <strong style="color:var(--gold2);">ديار العقارية (DIYAR Estates)</strong> شركة متخصصة في التطوير
+                والاستثمار العقاري الدولي الفاخر بحضور في <strong style="color:var(--gold2);">الولايات المتحدة (المقر
+                    الرئيسي)</strong>، <strong style="color:var(--gold2);">مصر</strong>، و<strong
+                    style="color:var(--gold2);">تركيا</strong>. تقدم الشركة فرصاً استثمارية استثنائية في القطاعين
+                الفندقي والسكني والزراعي للمستثمرين حول العالم.
+            </p>
+        </div>
+        <div class="grid3" style="margin-bottom:14px;">
+            <div class="stat-card">
+                <div class="stat-val">٣</div>
+                <div class="stat-lbl">دول بها مشاريع</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">٥</div>
+                <div class="stat-lbl">مشاريع عقارية</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val">٢٢</div>
+                <div class="stat-lbl">صفحة في الموقع</div>
+            </div>
+        </div>
+        <div class="box" style="margin-bottom:12px;">
+            <div class="box-title"><i class="fas fa-layer-group"></i>هيكل الموقع الكامل — ٢٢ ملف وصفحة</div>
+            <div class="grid2" style="gap:8px;margin-top:8px;">
+                <div
+                    style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:9px 12px;font-size:12px;">
+                    <div style="color:var(--gold2);font-weight:700;margin-bottom:5px;"><i class="fas fa-file-code"
+                            style="margin-left:6px;color:var(--gold);"></i>الصفحات الرئيسية</div>
+                    <div style="color:var(--gray);">الرئيسية · من نحن · المستثمرون · تواصل معنا</div>
+                </div>
+                <div
+                    style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:9px 12px;font-size:12px;">
+                    <div style="color:var(--gold2);font-weight:700;margin-bottom:5px;"><i class="fas fa-flag"
+                            style="margin-left:6px;color:var(--gold);"></i>صفحات الدول</div>
+                    <div style="color:var(--gray);">مشاريع مصر · مشاريع أمريكا · مشاريع تركيا</div>
+                </div>
+                <div
+                    style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:9px 12px;font-size:12px;">
+                    <div style="color:var(--gold2);font-weight:700;margin-bottom:5px;"><i class="fas fa-building"
+                            style="margin-left:6px;color:var(--gold);"></i>تفاصيل المشاريع</div>
+                    <div style="color:var(--gray);">كاندل هوتيل · الريف القنوي · مزرعة ١٦٠ فدان · ديار USA · بوسفور
+                    </div>
+                </div>
+                <div
+                    style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:9px 12px;font-size:12px;">
+                    <div style="color:var(--gold2);font-weight:700;margin-bottom:5px;"><i class="fab fa-laravel"
+                            style="margin-left:6px;color:var(--gold);"></i>قوالب Laravel Blade</div>
+                    <div style="color:var(--gray);">Layout · Header · Footer · Mobile Menu · Project Card · Detail</div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title"><i class="fas fa-bullseye"></i>أهداف الموقع</div>
+            <ul class="flist">
+                <li><strong>إبراز الحضور الدولي</strong> للشركة في مصر وأمريكا وتركيا باحترافية عالمية</li>
+                <li><strong>استقطاب المستثمرين الدوليين</strong> عبر بوابة استثمار متخصصة مع تحليلات وعوائد</li>
+                <li><strong>عرض المشاريع</strong> بصفحات تفصيلية تشمل الصور والمخططات والبروشورات والفيديو</li>
+                <li><strong>هوية بصرية فاخرة</strong> Navy & Gold تعكس مستوى الشركة ومشاريعها</li>
+                <li><strong>إدارة ديناميكية كاملة</strong> بلوحة تحكم Laravel بدون أي خبرة تقنية</li>
+            </ul>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٧</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 8 — EGYPT PROJECTS ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في مصر</div>
+                    <div class="ph-sub">٣ مشاريع عملاقة — فندقية وزراعية في صعيد مصر</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٨</div>
+        </div>
+        <div class="proj-card" style="border-color:rgba(201,168,76,0.35);">
+            <div class="proj-header">
+                <div>
+                    <div class="proj-name">🏨 كاندل هوتيل دندرة — Candle Hotel Dendera</div>
+                    <div class="proj-loc"><i class="fas fa-map-marker-alt" style="margin-left:4px;"></i>دندرة، محافظة
+                        قنا، صعيد مصر</div>
+                </div>
+                <div class="proj-type-badge">فندقي ⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="proj-desc">المشروع الفارق لديار العقارية في قطاع الضيافة. يقع بجوار معبد دندرة الأثري الشهير،
+                يمزج الأناقة المعمارية المعاصرة بروح الإرث المصري الأصيل لخدمة السياحة الثقافية المتنامية.</div>
+            <div class="proj-stats">
+                <div class="proj-stat"><i class="fas fa-bed"></i><strong>١٨٠</strong> غرفة وجناح</div>
+                <div class="proj-stat"><i class="fas fa-star"></i><strong>٥ نجوم</strong></div>
+                <div class="proj-stat"><i class="fas fa-utensils"></i><strong>٤</strong> مطاعم</div>
+                <div class="proj-stat"><i class="fas fa-dollar-sign"></i>استثمار <strong>$٤٥M</strong></div>
+                <div class="proj-stat"><i class="fas fa-chart-line"></i>عائد <strong>١٨–٢٢٪</strong> سنوياً</div>
+                <div class="proj-stat"><i class="fas fa-dollar-sign"></i>أدنى استثمار <strong>$٥٠,٠٠٠</strong></div>
+                <div class="proj-stat"><i class="fas fa-calendar"></i>افتتاح <strong>٢٠٢٦</strong></div>
+            </div>
+        </div>
+        <div class="proj-card">
+            <div class="proj-header">
+                <div>
+                    <div class="proj-name">🌾 الريف القنوي — Al Reef Al Qenawi 4000 فدان</div>
+                    <div class="proj-loc"><i class="fas fa-map-marker-alt" style="margin-left:4px;"></i>قنا، صعيد مصر —
+                        الحزام الزراعي</div>
+                </div>
+                <div class="proj-type-badge">زراعي · بيئي</div>
+            </div>
+            <div class="proj-desc">مشروع تطوير زراعي وبيئي ضخم يمتد على ٤٠٠٠ فدان في صعيد مصر. يهدف لإحداث نقلة نوعية في
+                الاستثمار الزراعي بمصر العليا من خلال استصلاح الأراضي وأحدث أساليب الزراعة الحديثة.</div>
+            <div class="proj-stats">
+                <div class="proj-stat"><i class="fas fa-expand-arrows-alt"></i><strong>٤٠٠٠</strong> فدان</div>
+                <div class="proj-stat"><i class="fas fa-seedling"></i><strong>زراعة حديثة</strong></div>
+                <div class="proj-stat"><i class="fas fa-circle" style="color:#27c93f;font-size:8px;"></i><strong>قيد
+                        التطوير</strong></div>
+            </div>
+        </div>
+        <div class="proj-card">
+            <div class="proj-header">
+                <div>
+                    <div class="proj-name">🌿 مزرعة ١٦٠ فدان — 160 Feddan Farm</div>
+                    <div class="proj-loc"><i class="fas fa-map-marker-alt" style="margin-left:4px;"></i>صعيد مصر —
+                        الحزام الزراعي الخصيب</div>
+                </div>
+                <div class="proj-type-badge">زراعي · تشغيلي</div>
+            </div>
+            <div class="proj-desc">استثمار زراعي تشغيلي ناجح في صعيد مصر، يعمل بكامل طاقته ويمثل نموذجاً فعالاً لتطوير
+                واستثمار الأراضي الزراعية المصرية مع فرص توسعية مستقبلية.</div>
+            <div class="proj-stats">
+                <div class="proj-stat"><i class="fas fa-expand-arrows-alt"></i><strong>١٦٠</strong> فدان</div>
+                <div class="proj-stat"><i class="fas fa-tractor"></i><strong>تطوير أراضي</strong></div>
+                <div class="proj-stat"><i class="fas fa-circle"
+                        style="color:#27c93f;font-size:8px;"></i><strong>تشغيلي</strong></div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٨</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 9 — USA & TURKEY PROJECTS ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-globe-americas"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار — أمريكا وتركيا</div>
+                    <div class="ph-sub">إقامة فاخرة · جنسية بالاستثمار · عوائد مرتفعة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٩</div>
+        </div>
+        <div class="ch">
+            <div class="ch-flag">🇺🇸</div>
+            <div>
+                <div class="ch-name">الولايات المتحدة الأمريكية</div>
+                <div class="ch-desc">سكني فاخر · مجمع مسوّر حصري · عوائد استثمارية قوية</div>
+            </div>
+        </div>
+        <div class="proj-card" style="border-color:rgba(201,168,76,0.3);margin-bottom:20px;">
+            <div class="proj-header">
+                <div>
+                    <div class="proj-name">🏠 ديار للإقامة الفاخرة — Diyar Luxury Residences</div>
+                    <div class="proj-loc"><i class="fas fa-map-marker-alt" style="margin-left:4px;"></i>الولايات المتحدة
+                        الأمريكية — موقع متميز</div>
+                </div>
+                <div class="proj-type-badge">سكني فاخر · قبل الإطلاق</div>
+            </div>
+            <div class="proj-desc">مشروع ديار الأمريكي الرائد — مجمع سكني مسوّر حصري بأعلى معايير الإنشاء الأمريكي،
+                لمسات أوروبية راقية، منازل ذكية، حدائق خاصة، ومرافق ريزورت فاخرة. استثمار مثالي في سوق عالي الطلب.</div>
+            <div class="proj-stats">
+                <div class="proj-stat"><i class="fas fa-home"></i><strong>٨٥</strong> وحدة</div>
+                <div class="proj-stat"><i class="fas fa-bed"></i><strong>٤–٦</strong> غرف</div>
+                <div class="proj-stat"><i class="fas fa-ruler-combined"></i><strong>٣٥٠٠+</strong> قدم²</div>
+                <div class="proj-stat"><i class="fas fa-dollar-sign"></i>من <strong>$٨٥٠,٠٠٠</strong></div>
+                <div class="proj-stat"><i class="fas fa-chart-line"></i>عائد <strong>٦–٩٪</strong> سنوياً</div>
+                <div class="proj-stat"><i class="fas fa-key"></i><strong>Freehold</strong></div>
+            </div>
+        </div>
+        <div class="ch">
+            <div class="ch-flag">🇹🇷</div>
+            <div>
+                <div class="ch-name">جمهورية تركيا</div>
+                <div class="ch-desc">شقق فاخرة بإطلالة البوسفور · جنسية تركية بالاستثمار</div>
+            </div>
+        </div>
+        <div class="proj-card" style="border-color:rgba(201,168,76,0.3);">
+            <div class="proj-header">
+                <div>
+                    <div class="proj-name">🌉 بوسفور ريزيدنسز — Bosphorus View Residences</div>
+                    <div class="proj-loc"><i class="fas fa-map-marker-alt" style="margin-left:4px;"></i>إسطنبول، تركيا —
+                        إطلالة مضيق البوسفور</div>
+                </div>
+                <div class="proj-type-badge">سكني فاخر · قيد التطوير</div>
+            </div>
+            <div class="proj-desc">١٢٠ شقة فاخرة وبنتهاوس في برج ٣٢ طابقاً بإطلالات خلابة على البوسفور. رخام إيطالي
+                فاخر، أتمتة ذكية، بالكونات بانورامية. مؤهل لبرنامج الجنسية التركية بالاستثمار.</div>
+            <div class="proj-stats">
+                <div class="proj-stat"><i class="fas fa-building"></i><strong>١٢٠</strong> وحدة</div>
+                <div class="proj-stat"><i class="fas fa-layer-group"></i><strong>٣٢</strong> طابقاً</div>
+                <div class="proj-stat"><i class="fas fa-dollar-sign"></i>من <strong>$٣٥٠,٠٠٠</strong></div>
+                <div class="proj-stat"><i class="fas fa-passport"></i>جنسية من <strong>$٤٠٠,٠٠٠</strong></div>
+                <div class="proj-stat"><i class="fas fa-chart-line"></i>عائد <strong>٨–١٢٪</strong> سنوياً</div>
+                <div class="proj-stat"><i class="fas fa-calendar"></i>اكتمل <strong>٢٠٢٥</strong></div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٩</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 10 — HOME ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-home"></i></div>
+                <div>
+                    <div class="ph-title">الرئيسية — DIYAR Estates</div>
+                    <div class="ph-sub">Home Page</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٠</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com — الرئيسية</div>
+            </div>
+            <img src="screenshots/home.png" alt="الرئيسية — DIYAR Estates">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٠</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 11 — ABOUT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-users"></i></div>
+                <div>
+                    <div class="ph-title">من نحن — About DIYAR Estates</div>
+                    <div class="ph-sub">رؤية الشركة وقيمها</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١١</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/about — من نحن</div>
+            </div>
+            <img src="screenshots/about.png" alt="من نحن — About DIYAR Estates">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١١</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 12 — INVESTORS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-chart-line"></i></div>
+                <div>
+                    <div class="ph-title">بوابة المستثمرين — Investors Portal</div>
+                    <div class="ph-sub">فرص الاستثمار وعوائد الربح</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٢</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/investors — المستثمرون</div>
+            </div>
+            <img src="screenshots/investors.png" alt="بوابة المستثمرين — Investors Portal">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٢</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 13 — CONTACT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <div class="ph-title">تواصل معنا — Contact Page</div>
+                    <div class="ph-sub">نموذج تواصل وخريطة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٣</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/contact — تواصل معنا</div>
+            </div>
+            <img src="screenshots/contact.png" alt="تواصل معنا — Contact Page">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٣</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 14 — PROJECTS-EGYPT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في مصر</div>
+                    <div class="ph-sub">قائمة المشاريع الفندقية والزراعية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٤</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/egypt</div>
+            </div>
+            <img src="screenshots/projects-egypt.png" alt="مشاريع ديار في مصر">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٤</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 15 — PROJECTS-USA ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في أمريكا</div>
+                    <div class="ph-sub">ديار للإقامة الفاخرة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٥</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/usa</div>
+            </div>
+            <img src="screenshots/projects-usa.png" alt="مشاريع ديار في أمريكا">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٥</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 16 — PROJECTS-TURKEY ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في تركيا</div>
+                    <div class="ph-sub">بوسفور ريزيدنسز</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٦</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/turkey</div>
+            </div>
+            <img src="screenshots/projects-turkey.png" alt="مشاريع ديار في تركيا">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٦</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 17 — CANDLE-HOTEL ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-hotel"></i></div>
+                <div>
+                    <div class="ph-title">كاندل هوتيل دندرة — Candle Hotel</div>
+                    <div class="ph-sub">مشروع فندقي ٥ نجوم</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٧</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/candle-hotel</div>
+            </div>
+            <img src="screenshots/project-candle-hotel.png" alt="كاندل هوتيل دندرة — Candle Hotel">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٧</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 18 — AL-REEF ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-seedling"></i></div>
+                <div>
+                    <div class="ph-title">الريف القنوي — Al Reef Al Qenawi</div>
+                    <div class="ph-sub">مشروع زراعي ٤٠٠٠ فدان</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٨</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/al-reef-al-qenawi</div>
+            </div>
+            <img src="screenshots/project-al-reef.png" alt="الريف القنوي — Al Reef Al Qenawi">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٨</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 19 — 160-FEDDAN ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-seedling"></i></div>
+                <div>
+                    <div class="ph-title">مزرعة ١٦٠ فدان — 160 Feddan Farm</div>
+                    <div class="ph-sub">مزرعة تشغيلية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٩</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/feddan-farm-160</div>
+            </div>
+            <img src="screenshots/project-feddan-160.png" alt="مزرعة ١٦٠ فدان — 160 Feddan Farm">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٩</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 20 — USA-RESIDENCES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-home"></i></div>
+                <div>
+                    <div class="ph-title">ديار للإقامة الفاخرة — USA Residences</div>
+                    <div class="ph-sub">مجتمع مسور حصري</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٠</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/usa-project-1</div>
+            </div>
+            <img src="screenshots/project-usa-residences.png" alt="ديار للإقامة الفاخرة — USA Residences">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٠</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 21 — BOSPHORUS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-building"></i></div>
+                <div>
+                    <div class="ph-title">بوسفور ريزيدنسز — Bosphorus</div>
+                    <div class="ph-sub">إطلالة بانورامية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢١</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/turkey-project-1</div>
+            </div>
+            <img src="screenshots/project-bosphorus.png" alt="بوسفور ريزيدنسز — Bosphorus">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢١</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 22 — ADMIN-DASHBOARD ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div>
+                    <div class="ph-title">لوحة التحكم — Dashboard</div>
+                    <div class="ph-sub">لوحة التحكم الرئيسية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٢</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/dashboard</div>
+            </div>
+            <img src="screenshots/Admin/Dashboard.png" alt="لوحة التحكم — Dashboard">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٢</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 23 — ADMIN-ANALYTICS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-chart-pie"></i></div>
+                <div>
+                    <div class="ph-title">إحصائيات النظام — Analytics</div>
+                    <div class="ph-sub">تحليلات الموقع والزوار</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٣</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/analytics</div>
+            </div>
+            <img src="screenshots/Admin/Analytics.png" alt="إحصائيات النظام — Analytics">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٣</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 24 — ADMIN-PROJECTS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-city"></i></div>
+                <div>
+                    <div class="ph-title">إدارة المشاريع — Projects</div>
+                    <div class="ph-sub">إضافة وتعديل المشاريع</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٤</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/projects</div>
+            </div>
+            <img src="screenshots/Admin/Projects.png" alt="إدارة المشاريع — Projects">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٤</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 25 — ADMIN-INQUIRIES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-inbox"></i></div>
+                <div>
+                    <div class="ph-title">الاستفسارات — Inquiries</div>
+                    <div class="ph-sub">رسائل العملاء والمستثمرين</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٥</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/inquiries</div>
+            </div>
+            <img src="screenshots/Admin/Inquiries.png" alt="الاستفسارات — Inquiries">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٥</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 26 — ADMIN-INVESTORS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-users-cog"></i></div>
+                <div>
+                    <div class="ph-title">المستثمرون — Investors</div>
+                    <div class="ph-sub">قاعدة بيانات المستثمرين</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٦</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/investors</div>
+            </div>
+            <img src="screenshots/Admin/Investors.png" alt="المستثمرون — Investors">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٦</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 27 — ADMIN-PAGES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-file-alt"></i></div>
+                <div>
+                    <div class="ph-title">إدارة الصفحات — Pages</div>
+                    <div class="ph-sub">محتوى صفحات الموقع</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٧</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/pages</div>
+            </div>
+            <img src="screenshots/Admin/Pages.png" alt="إدارة الصفحات — Pages">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٧</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 28 — ADMIN-MEDIA ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-images"></i></div>
+                <div>
+                    <div class="ph-title">مكتبة الوسائط — Media Library</div>
+                    <div class="ph-sub">ملفات الصور والفيديو</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٨</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/media</div>
+            </div>
+            <img src="screenshots/Admin/Media Library.png" alt="مكتبة الوسائط — Media Library">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٨</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 29 — ADMIN-SETTINGS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-cog"></i></div>
+                <div>
+                    <div class="ph-title">إعدادات النظام — Settings</div>
+                    <div class="ph-sub">إعدادات الموقع العامة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٩</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/settings</div>
+            </div>
+            <img src="screenshots/Admin/Settings.png" alt="إعدادات النظام — Settings">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٩</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 30 — FRONTEND + BACKEND FEATURES ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-star"></i></div>
+                <div>
+                    <div class="ph-title">مميزات الموقع ولوحة التحكم</div>
+                    <div class="ph-sub">Front-End & Back-End — كل ما يحصل عليه الموقع</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣٠</div>
+        </div>
+        <div class="admin-grid" style="margin-bottom:12px;">
+            <div class="admin-card" style="border-color:rgba(201,168,76,0.25);">
+                <div class="admin-card-title"><i class="fas fa-palette"></i>هوية بصرية فاخرة</div>
+                <ul>
+                    <li>نظام تصميم Navy & Gold حصري</li>
+                    <li>خطوط Playfair Display + Inter</li>
+                    <li>تصميم بمستوى العلامات العالمية</li>
+                    <li>عناصر ذهبية في كل التفاصيل</li>
+                </ul>
+            </div>
+            <div class="admin-card" style="border-color:rgba(201,168,76,0.25);">
+                <div class="admin-card-title"><i class="fas fa-mobile-alt"></i>تجاوب كامل 100%</div>
+                <ul>
+                    <li>Mobile-First Responsive Design</li>
+                    <li>توافق مع كل الشاشات</li>
+                    <li>قائمة جوال أنيقة</li>
+                    <li>صور وشبكات متكيفة</li>
+                </ul>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-title"><i class="fas fa-magic"></i>تأثيرات حركية</div>
+                <ul>
+                    <li>Scroll-reveal لكل العناصر</li>
+                    <li>عدادات أرقام متحركة</li>
+                    <li>بطاقات تفاعلية Hover</li>
+                    <li>انتقالات CSS سلسة</li>
+                </ul>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-title"><i class="fas fa-images"></i>معرض وسائط</div>
+                <ul>
+                    <li>Lightbox Gallery تفاعلي</li>
+                    <li>فيديو YouTube بمودال</li>
+                    <li>مخططات Masterplan</li>
+                    <li>تحميل PDF البروشور</li>
+                </ul>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-title"><i class="fas fa-building"></i>إدارة المشاريع</div>
+                <ul>
+                    <li>إضافة وتعديل المشاريع</li>
+                    <li>رفع الصور والوسائط</li>
+                    <li>إدارة بيانات الاستثمار</li>
+                    <li>نشر وإخفاء المشاريع</li>
+                </ul>
+            </div>
+            <div class="admin-card">
+                <div class="admin-card-title"><i class="fas fa-inbox"></i>إدارة الاستفسارات</div>
+                <ul>
+                    <li>استقبال رسائل التواصل</li>
+                    <li>طلبات الاستثمار الواردة</li>
+                    <li>تصدير البيانات Excel</li>
+                    <li>تنبيه بريد إلكتروني تلقائي</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-title"><i class="fas fa-layer-group"></i>التقنيات المستخدمة</div>
+            <div class="tech-grid">
+                <div class="tech-pill"><i class="fab fa-laravel"></i>Laravel</div>
+                <div class="tech-pill"><i class="fab fa-html5"></i>HTML5</div>
+                <div class="tech-pill"><i class="fab fa-css3-alt"></i>CSS3</div>
+                <div class="tech-pill"><i class="fab fa-js"></i>Vanilla JS</div>
+                <div class="tech-pill"><i class="fas fa-wind"></i>Tailwind CSS</div>
+                <div class="tech-pill"><i class="fas fa-leaf"></i>Blade Templates</div>
+                <div class="tech-pill"><i class="fas fa-database"></i>MySQL</div>
+                <div class="tech-pill"><i class="fas fa-server"></i>PHP 8.x</div>
+            </div>
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣٠</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 31 — PRICING ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-tags"></i></div>
+                <div>
+                    <div class="ph-title">عرض السعر الشامل</div>
+                    <div class="ph-sub">التكلفة الإجمالية لتطوير وإطلاق الموقع بالكامل</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣١</div>
+        </div>
+        <div class="price-big">
+            <div class="price-badge"><i class="fas fa-tag" style="margin-left:5px;"></i>خصم خاص بمناسبة التعاقد المبكر
+            </div>
+            <div class="price-old">٢٥,٠٠٠ جنيه مصري</div>
+            <div><span class="price-new">١٨,٠٠٠</span><span class="price-cur"> جنيه مصري</span></div>
+            <div class="price-note">السعر نهائي ويشمل جميع بنود المشروع — لا توجد تكاليف خفية</div>
+        </div>
+        <div class="includes-grid">
+            <div class="inc-item"><i class="fas fa-check-circle"></i>تصميم UI/UX لـ ٢٢ صفحة</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>برمجة Front-End متجاوبة</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>لوحة تحكم Laravel كاملة</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>استضافة سريعة وقوية</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>حجز اسم النطاق</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>شهادة SSL (HTTPS آمن)</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>خريطة جوجل Dark Mode</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>تحسين SEO شامل</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>إدخال بيانات ٥ مشاريع</div>
+            <div class="inc-item"><i class="fas fa-check-circle"></i>دعم فني شهر مجاناً</div>
+        </div>
+        <div class="box" style="margin-top:14px;">
+            <div class="box-title"><i class="fas fa-handshake"></i>طريقة الدفع</div>
+            <div class="grid2" style="gap:10px;margin-top:8px;">
+                <div
+                    style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:14px;text-align:center;">
+                    <div style="font-size:26px;font-weight:900;color:var(--gold);">٥٠٪</div>
+                    <div style="font-size:12px;color:var(--white);font-weight:700;margin-top:3px;">عند التعاقد وبدء
+                        العمل</div>
+                    <div style="font-size:11px;color:var(--gray);margin-top:2px;">٩,٠٠٠ جنيه مصري</div>
+                </div>
+                <div
+                    style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:14px;text-align:center;">
+                    <div style="font-size:26px;font-weight:900;color:var(--gold);">٥٠٪</div>
+                    <div style="font-size:12px;color:var(--white);font-weight:700;margin-top:3px;">عند الاستلام والتسليم
+                    </div>
+                    <div style="font-size:11px;color:var(--gray);margin-top:2px;">٩,٠٠٠ جنيه مصري</div>
+                </div>
+            </div>
+        </div>
+        <div
+            style="margin-top:12px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:12px 16px;display:flex;align-items:center;gap:10px;">
+            <i class="fas fa-clock" style="color:var(--gold);font-size:18px;"></i>
+            <div>
+                <div style="font-size:13px;font-weight:700;color:var(--white);">مدة التنفيذ الإجمالية: ٥–٧ أيام عمل
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣١</span></div>
+    </div>
+
+
+    <!-- ═══════ PAGE 32 — CONTACT ═══════ -->
+    <div class="page inner">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <div class="ph-title">تواصل مع فريق برمجلي</div>
+                    <div class="ph-sub">نسعد بتواصلكم عبر أي قناة تفضلونها</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣٢</div>
+        </div>
+        <div class="thankyou">
+            <i class="fas fa-handshake"></i>
+            <h3>شكراً لثقتكم في برمجلي</h3>
+            <p>نتطلع بشغف لبدء العمل معكم على بناء موقع ديار العقارية ليكون الأقوى والأجمل في قطاع التطوير العقاري
+                الدولي. معاً سنحوّل رؤيتكم إلى تجربة رقمية استثنائية تليق بحجم شركتكم ومشاريعكم العالمية.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <div class="ci"><i class="fas fa-globe"></i></div>
+                <div>
+                    <h4>الموقع الإلكتروني</h4>
+                    <p><a href="https://www.barmagly.tech">www.barmagly.tech</a></p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="ci"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <h4>البريد الإلكتروني</h4>
+                    <p><a href="mailto:info@barmagly.tech">info@barmagly.tech</a></p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="ci"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                    <h4>واتساب وهاتف</h4>
+                    <p><a href="https://wa.me/201010254819">+201010254819</a></p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="ci"><i class="fab fa-facebook-f"></i></div>
+                <div>
+                    <h4>Facebook</h4>
+                    <p><a href="https://www.facebook.com/BarmaglyOfficial/">@BarmaglyOfficial</a></p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="ci"><i class="fab fa-linkedin-in"></i></div>
+                <div>
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://www.linkedin.com/company/102957997">Barmagly on LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="ci"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h4>المقر الرئيسي</h4>
+                    <p>Hardstrasse 201, 8005 Zürich, Switzerland</p>
+                </div>
+            </div>
+        </div>
+        <div
+            style="margin-top:16px;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:10px;display:flex;justify-content:space-between;align-items:center;">
+            <div style="text-align:center;">
+                <div style="font-size:10px;color:var(--gray);letter-spacing:1px;margin-bottom:3px;">الرخصة السويسرية
+                </div>
+                <div style="font-size:13px;font-weight:700;color:var(--white);">CHE-154.312.079</div>
+            </div>
+            <div style="width:1px;height:32px;background:rgba(255,255,255,0.1);"></div>
+            <div style="text-align:center;">
+                <div style="font-size:10px;color:var(--gray);letter-spacing:1px;margin-bottom:3px;">صالحية العرض</div>
+                <div style="font-size:13px;font-weight:700;color:var(--gold);">٣٠ يوماً</div>
+            </div>
+            <div style="width:1px;height:32px;background:rgba(255,255,255,0.1);"></div>
+            <div style="text-align:center;">
+                <div style="font-size:10px;color:var(--gray);letter-spacing:1px;margin-bottom:3px;">تاريخ العرض</div>
+                <div style="font-size:13px;font-weight:700;color:var(--white);">مارس ٢٠٢٦</div>
+            </div>
+            <div style="width:1px;height:32px;background:rgba(255,255,255,0.1);"></div>
+            <div style="text-align:center;">
+                <div style="font-size:10px;color:var(--gray);letter-spacing:1px;margin-bottom:3px;">إجمالي التكلفة</div>
+                <div style="font-size:13px;font-weight:700;color:var(--gold);">١٨,٠٠٠ جنيه</div>
+            </div>
+        </div>
+        <div class="pf"><span>© 2026 Barmagly · Swiss Precision, Global Innovation · جميع الحقوق محفوظة</span><span
+                class="pnum">٣٢</span></div>
+    </div>
+
+</body>
+
+</html>

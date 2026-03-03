@@ -1,0 +1,520 @@
+    <!-- ═══════ PAGE 13 — HOME ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-home"></i></div>
+                <div>
+                    <div class="ph-title">الرئيسية — DIYAR Estates</div>
+                    <div class="ph-sub">Home Page</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٣</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com — الرئيسية</div>
+            </div>
+            <img src="screenshots/home.png" alt="الرئيسية — DIYAR Estates">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٣</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 14 — ABOUT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-users"></i></div>
+                <div>
+                    <div class="ph-title">من نحن — About DIYAR Estates</div>
+                    <div class="ph-sub">رؤية الشركة وقيمها</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٤</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/about — من نحن</div>
+            </div>
+            <img src="screenshots/about.png" alt="من نحن — About DIYAR Estates">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٤</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 15 — INVESTORS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-chart-line"></i></div>
+                <div>
+                    <div class="ph-title">بوابة المستثمرين — Investors Portal</div>
+                    <div class="ph-sub">فرص الاستثمار وعوائد الربح</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٥</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/investors — المستثمرون</div>
+            </div>
+            <img src="screenshots/investors.png" alt="بوابة المستثمرين — Investors Portal">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٥</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 16 — CONTACT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <div class="ph-title">تواصل معنا — Contact Page</div>
+                    <div class="ph-sub">نموذج تواصل وخريطة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٦</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/contact — تواصل معنا</div>
+            </div>
+            <img src="screenshots/contact.png" alt="تواصل معنا — Contact Page">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٦</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 17 — PROJECTS-EGYPT ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في مصر</div>
+                    <div class="ph-sub">قائمة المشاريع الفندقية والزراعية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٧</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/egypt</div>
+            </div>
+            <img src="screenshots/projects-egypt.png" alt="مشاريع ديار في مصر">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٧</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 18 — PROJECTS-USA ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في أمريكا</div>
+                    <div class="ph-sub">ديار للإقامة الفاخرة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٨</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/usa</div>
+            </div>
+            <img src="screenshots/projects-usa.png" alt="مشاريع ديار في أمريكا">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٨</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 19 — PROJECTS-TURKEY ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-flag"></i></div>
+                <div>
+                    <div class="ph-title">مشاريع ديار في تركيا</div>
+                    <div class="ph-sub">بوسفور ريزيدنسز</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ١٩</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/turkey</div>
+            </div>
+            <img src="screenshots/projects-turkey.png" alt="مشاريع ديار في تركيا">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">١٩</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 20 — CANDLE-HOTEL ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-hotel"></i></div>
+                <div>
+                    <div class="ph-title">كاندل هوتيل دندرة — Candle Hotel</div>
+                    <div class="ph-sub">مشروع فندقي ٥ نجوم</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٠</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/candle-hotel</div>
+            </div>
+            <img src="screenshots/project-candle-hotel.png" alt="كاندل هوتيل دندرة — Candle Hotel">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٠</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 21 — AL-REEF ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-seedling"></i></div>
+                <div>
+                    <div class="ph-title">الريف القنوي — Al Reef Al Qenawi</div>
+                    <div class="ph-sub">مشروع زراعي ٤٠٠٠ فدان</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢١</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/al-reef-al-qenawi</div>
+            </div>
+            <img src="screenshots/project-al-reef.png" alt="الريف القنوي — Al Reef Al Qenawi">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢١</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 22 — 160-FEDDAN ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-seedling"></i></div>
+                <div>
+                    <div class="ph-title">مزرعة ١٦٠ فدان — 160 Feddan Farm</div>
+                    <div class="ph-sub">مزرعة تشغيلية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٢</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/feddan-farm-160</div>
+            </div>
+            <img src="screenshots/project-feddan-160.png" alt="مزرعة ١٦٠ فدان — 160 Feddan Farm">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٢</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 23 — USA-RESIDENCES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-home"></i></div>
+                <div>
+                    <div class="ph-title">ديار للإقامة الفاخرة — USA Residences</div>
+                    <div class="ph-sub">مجتمع مسور حصري</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٣</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/usa-project-1</div>
+            </div>
+            <img src="screenshots/project-usa-residences.png" alt="ديار للإقامة الفاخرة — USA Residences">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٣</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 24 — BOSPHORUS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-building"></i></div>
+                <div>
+                    <div class="ph-title">بوسفور ريزيدنسز — Bosphorus</div>
+                    <div class="ph-sub">إطلالة بانورامية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٤</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 www.diyarestes.com/projects/turkey-project-1</div>
+            </div>
+            <img src="screenshots/project-bosphorus.png" alt="بوسفور ريزيدنسز — Bosphorus">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٤</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 25 — ADMIN-DASHBOARD ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <div>
+                    <div class="ph-title">لوحة التحكم — Dashboard</div>
+                    <div class="ph-sub">لوحة التحكم الرئيسية</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٥</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/dashboard</div>
+            </div>
+            <img src="screenshots/Admin/Dashboard.png" alt="لوحة التحكم — Dashboard">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٥</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 26 — ADMIN-ANALYTICS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-chart-pie"></i></div>
+                <div>
+                    <div class="ph-title">إحصائيات النظام — Analytics</div>
+                    <div class="ph-sub">تحليلات الموقع والزوار</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٦</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/analytics</div>
+            </div>
+            <img src="screenshots/Admin/Analytics.png" alt="إحصائيات النظام — Analytics">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٦</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 27 — ADMIN-PROJECTS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-city"></i></div>
+                <div>
+                    <div class="ph-title">إدارة المشاريع — Projects</div>
+                    <div class="ph-sub">إضافة وتعديل المشاريع</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٧</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/projects</div>
+            </div>
+            <img src="screenshots/Admin/Projects.png" alt="إدارة المشاريع — Projects">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٧</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 28 — ADMIN-INQUIRIES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-inbox"></i></div>
+                <div>
+                    <div class="ph-title">الاستفسارات — Inquiries</div>
+                    <div class="ph-sub">رسائل العملاء والمستثمرين</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٨</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/inquiries</div>
+            </div>
+            <img src="screenshots/Admin/Inquiries.png" alt="الاستفسارات — Inquiries">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٨</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 29 — ADMIN-INVESTORS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-users-cog"></i></div>
+                <div>
+                    <div class="ph-title">المستثمرون — Investors</div>
+                    <div class="ph-sub">قاعدة بيانات المستثمرين</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٢٩</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/investors</div>
+            </div>
+            <img src="screenshots/Admin/Investors.png" alt="المستثمرون — Investors">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٢٩</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 30 — ADMIN-PAGES ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-file-alt"></i></div>
+                <div>
+                    <div class="ph-title">إدارة الصفحات — Pages</div>
+                    <div class="ph-sub">محتوى صفحات الموقع</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣٠</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/pages</div>
+            </div>
+            <img src="screenshots/Admin/Pages.png" alt="إدارة الصفحات — Pages">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣٠</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 31 — ADMIN-MEDIA ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-images"></i></div>
+                <div>
+                    <div class="ph-title">مكتبة الوسائط — Media Library</div>
+                    <div class="ph-sub">ملفات الصور والفيديو</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣١</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/media</div>
+            </div>
+            <img src="screenshots/Admin/Media Library.png" alt="مكتبة الوسائط — Media Library">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣١</span></div>
+    </div>
+
+    <!-- ═══════ PAGE 32 — ADMIN-SETTINGS ═══════ -->
+    <div class="page screen-page">
+        <div class="ph">
+            <div class="ph-left">
+                <div class="ph-icon"><i class="fas fa-cog"></i></div>
+                <div>
+                    <div class="ph-title">إعدادات النظام — Settings</div>
+                    <div class="ph-sub">إعدادات الموقع العامة</div>
+                </div>
+            </div>
+            <div class="ph-badge">الصفحة ٣٢</div>
+        </div>
+        <div class="screen-wrap">
+            <div class="screen-browser">
+                <div class="sb-dots">
+                    <div class="sb-dot r"></div>
+                    <div class="sb-dot y"></div>
+                    <div class="sb-dot g"></div>
+                </div>
+                <div class="sb-bar">🔒 admin.diyarestes.com/settings</div>
+            </div>
+            <img src="screenshots/Admin/Settings.png" alt="إعدادات النظام — Settings">
+        </div>
+        <div class="pf"><span>Barmagly · info@barmagly.tech · +201010254819</span><span class="pnum">٣٢</span></div>
+    </div>
+
