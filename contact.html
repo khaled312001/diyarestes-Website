@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Contact DIYAR Estates — Reach our USA headquarters, Egypt branch, or Turkey branch." />
+  <title>Contact Us — DIYAR Estates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#0A1628', 'primary-light': '#152238', section: '#0E1F35', gold: '#C9A84C' } } } }</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body class="bg-primary text-white">
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 no-underline">
+        <div class="logo-mark"><span class="logo-letter">D</span></div>
+        <div>
+          <div class="logo-name">DIYAR</div>
+          <div class="logo-sub">Estates</div>
+        </div>
+      </a>
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link">About</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link flex items-center gap-1">Projects <i
+              class="fas fa-chevron-down text-xs opacity-60 ml-1"></i></a>
+          <div class="dropdown-panel">
+            <a href="projects/egypt.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Egypt Projects</a>
+            <a href="projects/usa.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>USA Projects</a>
+            <a href="projects/turkey.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Turkey Projects</a>
+          </div>
+        </div>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="contact.html" class="nav-link" style="color:#C9A84C;">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="contact.html" class="btn btn-gold btn-sm hidden lg:inline-flex">Schedule Consultation</a>
+        <button id="menuBtn" class="lg:hidden text-white text-xl p-1"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenuBtn" class="absolute top-7 right-7 text-white text-3xl"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="projects/egypt.html">Egypt Projects</a><a href="projects/usa.html">USA Projects</a>
+    <a href="projects/turkey.html">Turkey Projects</a><a href="investors.html">Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold mt-6">Schedule Consultation</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg"
+      style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb mb-5">
+        <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+        <span class="breadcrumb-sep"><i class="fas fa-chevron-right text-xs"></i></span>
+        <div class="breadcrumb-item active">Contact</div>
+      </div>
+      <div class="section-label mb-4">Get In Touch</div>
+      <h1 class="heading-xl text-white" style="line-height:1.1;max-width:700px;">
+        Let's <em class="text-gold not-italic">Connect</em>
+      </h1>
+    </div>
+  </section>
+
+
+  <!-- OFFICE INFO + MAP -->
+  <section class="section-pad bg-section">
+    <div class="container">
+      <div class="section-label mb-4" data-reveal>Our Global Offices</div>
+      <h2 class="heading-lg text-white mb-12" data-reveal data-delay="100">
+        Find <em class="text-gold not-italic">Us</em>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+        <!-- USA -->
+        <div class="highlight-box" data-reveal>
+          <div
+            style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:16px;">
+            Main Headquarters
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:20px;">
+            <i class="fas fa-flag-usa" style="color:#C9A84C;font-size:1.2rem;margin-right:8px;"></i>United States
+          </h3>
+          <div class="space-y-4" style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;">
+            <div class="flex gap-3 items-start">
+              <i class="fas fa-location-dot footer-icon" style="margin-top:2px;"></i>
+              <span>Main Headquarters<br>United States of America</span>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-envelope footer-icon"></i>
+              <a href="mailto:info@diyarestes.com"
+                style="color:rgba(255,255,255,0.55);text-decoration:none;">info@diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-envelope footer-icon"></i>
+              <a href="mailto:invest@diyarestes.com"
+                style="color:rgba(255,255,255,0.55);text-decoration:none;">invest@diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-globe footer-icon"></i>
+              <a href="http://www.diyarestes.com"
+                style="color:rgba(255,255,255,0.55);text-decoration:none;">www.diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-clock footer-icon"></i>
+              <span>Mon–Fri: 9:00 AM – 6:00 PM EST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Egypt -->
+        <div class="highlight-box" data-reveal data-delay="150">
+          <div
+            style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:16px;">
+            Regional Office
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:20px;">
+            <span style="color:#C9A84C;font-size:1.2rem;margin-right:8px;">🇪🇬</span>Egypt
+          </h3>
+          <div class="space-y-4" style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;">
+            <div class="flex gap-3 items-start">
+              <i class="fas fa-location-dot footer-icon" style="margin-top:2px;"></i>
+              <span>Egypt Branch Office<br>Upper Egypt Operations<br>Egypt</span>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-envelope footer-icon"></i>
+              <a href="mailto:egypt@diyarestes.com"
+                style="color:rgba(255,255,255,0.55);text-decoration:none;">egypt@diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-clock footer-icon"></i>
+              <span>Mon–Fri: 9:00 AM – 5:00 PM EET</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Turkey -->
+        <div class="highlight-box" data-reveal data-delay="300">
+          <div
+            style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:16px;">
+            Regional Office
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:20px;">
+            <span style="color:#C9A84C;font-size:1.2rem;margin-right:8px;">🇹🇷</span>Turkey
+          </h3>
+          <div class="space-y-4" style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;">
+            <div class="flex gap-3 items-start">
+              <i class="fas fa-location-dot footer-icon" style="margin-top:2px;"></i>
+              <span>Turkey Branch Office<br>Istanbul Operations<br>Turkey</span>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-envelope footer-icon"></i>
+              <a href="mailto:turkey@diyarestes.com"
+                style="color:rgba(255,255,255,0.55);text-decoration:none;">turkey@diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-clock footer-icon"></i>
+              <span>Mon–Fri: 9:00 AM – 6:00 PM TRT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div class="map-placeholder" style="height:480px;" data-reveal>
+        <iframe src="https://maps.google.com/maps?q=United%20States&t=&z=4&ie=UTF8&iwloc=&output=embed" width="100%"
+          height="100%" style="border:0; filter:invert(90%) hue-rotate(180deg);" allowfullscreen
+          loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT FORM -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+
+        <!-- Form (wider) -->
+        <div class="lg:col-span-3" data-reveal>
+          <div class="section-label mb-4">Send Us a Message</div>
+          <h2 class="heading-md text-white mb-6">How Can We <em class="text-gold not-italic">Help?</em></h2>
+          <div class="gold-line mb-8"></div>
+
+          <form data-form style="background:#0E1F35;padding:48px;border:1px solid rgba(201,168,76,0.12);">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="form-group"><label class="form-label">First Name</label><input type="text"
+                  class="form-control" placeholder="Your first name" required /></div>
+              <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-control"
+                  placeholder="Your last name" required /></div>
+            </div>
+            <div class="form-group"><label class="form-label">Email Address</label><input type="email"
+                class="form-control" placeholder="your@email.com" required /></div>
+            <div class="form-group"><label class="form-label">Phone / WhatsApp</label><input type="tel"
+                class="form-control" placeholder="+1 (000) 000-0000" /></div>
+            <div class="form-group">
+              <label class="form-label">Subject / Department</label>
+              <select class="form-control">
+                <option value="">Select department</option>
+                <option>Investment Inquiry</option>
+                <option>Egypt Projects</option>
+                <option>USA Projects</option>
+                <option>Turkey Projects</option>
+                <option>Media &amp; Press</option>
+                <option>Partnership Inquiry</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Office</label>
+              <select class="form-control">
+                <option value="">Any office</option>
+                <option>USA Headquarters</option>
+                <option>Egypt Branch</option>
+                <option>Turkey Branch</option>
+              </select>
+            </div>
+            <div class="form-group"><label class="form-label">Your Message</label><textarea class="form-control"
+                placeholder="Tell us how we can help…" rows="5" required></textarea></div>
+            <button type="submit" class="btn btn-gold w-full justify-center">
+              Send Message <i class="fas fa-paper-plane text-xs ml-2"></i>
+            </button>
+            <p style="font-size:12px;color:rgba(255,255,255,0.25);text-align:center;margin-top:16px;">
+              We respond to all inquiries within 24 business hours.
+            </p>
+          </form>
+        </div>
+
+        <!-- Quick Contact Info -->
+        <div class="lg:col-span-2" data-reveal data-delay="150">
+          <div class="section-label mb-4">Quick Contact</div>
+          <h2 class="heading-md text-white mb-6">Other Ways to <em class="text-gold not-italic">Reach Us</em></h2>
+          <div class="gold-line mb-8"></div>
+
+          <div class="space-y-6">
+            <div style="padding:24px 28px;background:#0E1F35;border:1px solid rgba(201,168,76,0.12);">
+              <div
+                style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:14px;">
+                Email</div>
+              <div class="space-y-3" style="font-size:14px;">
+                <div>
+                  <div style="color:rgba(255,255,255,0.4);font-size:11px;margin-bottom:3px;">General</div><a
+                    href="mailto:info@diyarestes.com" style="color:white;text-decoration:none;">info@diyarestes.com</a>
+                </div>
+                <div>
+                  <div style="color:rgba(255,255,255,0.4);font-size:11px;margin-bottom:3px;">Investor Relations</div><a
+                    href="mailto:invest@diyarestes.com"
+                    style="color:white;text-decoration:none;">invest@diyarestes.com</a>
+                </div>
+                <div>
+                  <div style="color:rgba(255,255,255,0.4);font-size:11px;margin-bottom:3px;">Egypt Office</div><a
+                    href="mailto:egypt@diyarestes.com"
+                    style="color:white;text-decoration:none;">egypt@diyarestes.com</a>
+                </div>
+                <div>
+                  <div style="color:rgba(255,255,255,0.4);font-size:11px;margin-bottom:3px;">Turkey Office</div><a
+                    href="mailto:turkey@diyarestes.com"
+                    style="color:white;text-decoration:none;">turkey@diyarestes.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div style="padding:24px 28px;background:#0E1F35;border:1px solid rgba(201,168,76,0.12);">
+              <div
+                style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:14px;">
+                Website</div>
+              <a href="http://www.diyarestes.com"
+                style="font-size:14px;color:white;text-decoration:none;">www.diyarestes.com</a>
+            </div>
+
+            <div style="padding:24px 28px;background:#0E1F35;border:1px solid rgba(201,168,76,0.12);">
+              <div
+                style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:14px;">
+                Follow Us</div>
+              <div class="flex gap-3">
+                <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div style="padding:24px 28px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.2);">
+              <div
+                style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;font-weight:700;margin-bottom:14px;">
+                Schedule a Consultation</div>
+              <p style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:16px;">
+                Book a private 30-minute consultation with one of our investment specialists.
+              </p>
+              <a href="#" class="btn btn-gold btn-sm">Book Now <i class="fas fa-calendar text-xs ml-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="padding-top:80px;padding-bottom:60px;">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 no-underline mb-6">
+            <div class="logo-mark"><span class="logo-letter">D</span></div>
+            <div>
+              <div class="logo-name">DIYAR</div>
+              <div class="logo-sub">Estates</div>
+            </div>
+          </a>
+          <p class="footer-info mb-6">International real estate development and investment across USA, Egypt &amp;
+            Turkey.</p>
+          <div class="flex gap-3">
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Navigation</h5>
+          <a href="index.html" class="footer-link">Home</a><a href="about.html" class="footer-link">About Us</a>
+          <a href="projects/egypt.html" class="footer-link">Egypt Projects</a><a href="projects/usa.html"
+            class="footer-link">USA Projects</a>
+          <a href="projects/turkey.html" class="footer-link">Turkey Projects</a><a href="investors.html"
+            class="footer-link">Investors</a><a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <h5 class="footer-heading">USA Headquarters</h5>
+          <div class="space-y-3 footer-info">
+            <div class="flex gap-3 items-center"><i class="fas fa-envelope footer-icon"></i><a
+                href="mailto:info@diyarestes.com">info@diyarestes.com</a></div>
+            <div class="flex gap-3 items-center"><i class="fas fa-globe footer-icon"></i><a
+                href="http://www.diyarestes.com">www.diyarestes.com</a></div>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Regional Offices</h5>
+          <div class="space-y-5 footer-info">
+            <div>
+              <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);margin-bottom:4px;">Egypt Branch
+              </div>
+              <p>egypt@diyarestes.com</p>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);margin-bottom:4px;">Turkey Branch
+              </div>
+              <p>turkey@diyarestes.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);padding:22px 0;">
+      <div class="container flex flex-col md:flex-row justify-between items-center gap-4">
+        <p style="font-size:12px;color:rgba(255,255,255,0.22);">&copy; 2024 DIYAR Estates. All rights reserved.</p>
+        <div class="flex gap-6"><a href="#"
+            style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Privacy Policy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIYAR Estates Egypt Projects — Premium real estate and agricultural investments across Upper Egypt." />
+  <title>Egypt Projects — DIYAR Estates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#0A1628','primary-light':'#152238',section:'#0E1F35',gold:'#C9A84C'}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
+<body class="bg-primary text-white">
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 no-underline">
+        <div class="logo-mark"><span class="logo-letter">D</span></div>
+        <div><div class="logo-name">DIYAR</div><div class="logo-sub">Estates</div></div>
+      </a>
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../about.html" class="nav-link">About</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link flex items-center gap-1" style="color:#C9A84C;">Projects <i class="fas fa-chevron-down text-xs opacity-60 ml-1"></i></a>
+          <div class="dropdown-panel">
+            <a href="egypt.html"><i class="fas fa-circle text-xs mr-2 opacity-60" style="color:#C9A84C;"></i>Egypt Projects</a>
+            <a href="usa.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>USA Projects</a>
+            <a href="turkey.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Turkey Projects</a>
+          </div>
+        </div>
+        <a href="../investors.html" class="nav-link">Investors</a>
+        <a href="../contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="../contact.html" class="btn btn-gold btn-sm hidden lg:inline-flex">Schedule Consultation</a>
+        <button id="menuBtn" class="lg:hidden text-white text-xl p-1"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenuBtn" class="absolute top-7 right-7 text-white text-3xl"><i class="fas fa-times"></i></button>
+    <a href="../index.html">Home</a><a href="../about.html">About</a>
+    <a href="egypt.html">Egypt Projects</a><a href="usa.html">USA Projects</a>
+    <a href="turkey.html">Turkey Projects</a><a href="../investors.html">Investors</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../contact.html" class="btn btn-gold mt-6">Schedule Consultation</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb mb-5">
+        <div class="breadcrumb-item"><a href="../index.html">Home</a></div>
+        <span class="breadcrumb-sep"><i class="fas fa-chevron-right text-xs"></i></span>
+        <div class="breadcrumb-item"><a href="#">Projects</a></div>
+        <span class="breadcrumb-sep"><i class="fas fa-chevron-right text-xs"></i></span>
+        <div class="breadcrumb-item active">Egypt</div>
+      </div>
+      <div class="section-label mb-4">Regional Portfolio</div>
+      <h1 class="heading-xl text-white" style="line-height:1.1;">
+        Egypt <em class="text-gold not-italic">Projects</em>
+      </h1>
+    </div>
+  </section>
+
+
+  <!-- INTRO -->
+  <section style="background:#0E1F35;padding:64px 0;">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+        <div class="lg:col-span-2">
+          <div class="section-label mb-4" data-reveal>About Our Egypt Portfolio</div>
+          <h2 class="heading-md text-white mb-5" data-reveal data-delay="100">
+            Transforming Upper Egypt Through <em class="text-gold not-italic">Strategic Investment</em>
+          </h2>
+          <div class="gold-line mb-5" data-reveal data-delay="150"></div>
+          <p style="color:rgba(255,255,255,0.58);font-size:15px;line-height:1.9;" data-reveal data-delay="200">
+            DIYAR Estates' Egypt portfolio focuses on high-impact developments in Upper Egypt,
+            an emerging region rich with potential. From luxury hospitality adjacent to pharaonic
+            heritage sites to vast agricultural enterprises, our Egypt projects represent
+            both cultural preservation and economic transformation.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4 text-center" data-reveal data-delay="200">
+          <div style="padding:28px 16px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);">
+            <div class="stat-num" data-counter="20" data-suffix="+">20+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div style="padding:28px 16px;background:rgba(201,168,76,0.05);border:1px solid rgba(201,168,76,0.15);">
+            <div class="stat-num">$850M</div>
+            <div class="stat-label">Portfolio Value</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS GRID -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+      <div class="text-center mb-14">
+        <div class="section-label mb-4" data-reveal>All Egypt Projects</div>
+        <h2 class="heading-lg text-white" data-reveal data-delay="100">Our <em class="text-gold not-italic">Egypt</em> Portfolio</h2>
+        <div class="gold-line-c mt-6" data-reveal data-delay="150"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Candle Hotel -->
+        <article class="card" data-reveal>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Candle Hotel – Dendera" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge">Hospitality</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);">Dendera, Qena</span>
+            </div>
+            <h3>Candle Hotel – Dendera</h3>
+            <p>A premium hospitality destination near the Dendera Temple complex, blending pharaonic heritage with contemporary luxury design.</p>
+            <a href="candle-hotel.html" class="btn btn-outline-gold btn-sm">View Project <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Al Reef Al Qenawi -->
+        <article class="card" data-reveal data-delay="100">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" alt="Al Reef Al Qenawi" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge">Agriculture</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);">Qena Governorate</span>
+            </div>
+            <h3>Al Reef Al Qenawi – 4000 Feddan</h3>
+            <p>A landmark 4000-feddan agricultural and eco-development project transforming Upper Egypt's rural landscape into productive investment.</p>
+            <a href="al-reef-al-qenawi.html" class="btn btn-outline-gold btn-sm">View Project <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </article>
+
+        <!-- 160 Feddan Farm -->
+        <article class="card" data-reveal data-delay="200">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="160 Feddan Farm" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge">Land Development</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);">Upper Egypt</span>
+            </div>
+            <h3>160 Feddan Farm</h3>
+            <p>A productive agricultural investment offering sustainable yields and consistent returns in one of Egypt's most fertile agricultural corridors.</p>
+            <a href="feddan-farm-160.html" class="btn btn-outline-gold btn-sm">View Project <i class="fas fa-arrow-right text-xs ml-1"></i></a>
+          </div>
+        </article>
+
+        <!-- Additional project cards (pipeline) -->
+        <article class="card" data-reveal data-delay="0"
+          style="opacity:0.7;border:1px dashed rgba(201,168,76,0.2);">
+          <div class="card-img" style="display:flex;align-items:center;justify-content:center;background:#0E1F35;">
+            <div class="text-center p-8">
+              <i class="fas fa-plus" style="font-size:32px;color:rgba(201,168,76,0.3);margin-bottom:16px;display:block;"></i>
+              <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Coming Soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge" style="opacity:0.5;">Pipeline</span>
+            </div>
+            <h3 style="color:rgba(255,255,255,0.4);">New Egypt Project</h3>
+            <p>Additional Egypt development project currently in planning phase. Details to be announced.</p>
+            <a href="../contact.html" class="btn btn-outline-gold btn-sm" style="opacity:0.5;">Inquire Now</a>
+          </div>
+        </article>
+
+        <article class="card" data-reveal data-delay="100"
+          style="opacity:0.7;border:1px dashed rgba(201,168,76,0.2);">
+          <div class="card-img" style="display:flex;align-items:center;justify-content:center;background:#0E1F35;">
+            <div class="text-center p-8">
+              <i class="fas fa-plus" style="font-size:32px;color:rgba(201,168,76,0.3);margin-bottom:16px;display:block;"></i>
+              <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Coming Soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge" style="opacity:0.5;">Pipeline</span>
+            </div>
+            <h3 style="color:rgba(255,255,255,0.4);">New Egypt Project</h3>
+            <p>Additional Egypt development project currently in planning phase. Details to be announced.</p>
+            <a href="../contact.html" class="btn btn-outline-gold btn-sm" style="opacity:0.5;">Inquire Now</a>
+          </div>
+        </article>
+
+        <article class="card" data-reveal data-delay="200"
+          style="opacity:0.7;border:1px dashed rgba(201,168,76,0.2);">
+          <div class="card-img" style="display:flex;align-items:center;justify-content:center;background:#0E1F35;">
+            <div class="text-center p-8">
+              <i class="fas fa-plus" style="font-size:32px;color:rgba(201,168,76,0.3);margin-bottom:16px;display:block;"></i>
+              <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);">Coming Soon</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="card-badge" style="opacity:0.5;">Pipeline</span>
+            </div>
+            <h3 style="color:rgba(255,255,255,0.4);">New Egypt Project</h3>
+            <p>Additional Egypt development project currently in planning phase. Details to be announced.</p>
+            <a href="../contact.html" class="btn btn-outline-gold btn-sm" style="opacity:0.5;">Inquire Now</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section style="background:var(--grad-cta);padding:100px 0;">
+    <div class="container text-center">
+      <div class="section-label mb-5" data-reveal>Interested in Egypt?</div>
+      <h2 class="heading-md text-white mb-5" data-reveal data-delay="100">Discover Investment Opportunities in Egypt</h2>
+      <p style="color:rgba(255,255,255,0.55);max-width:520px;margin:0 auto 40px;line-height:1.9;" data-reveal data-delay="200">
+        Our Egypt team is ready to guide you through available investment opportunities.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4" data-reveal data-delay="300">
+        <a href="../investors.html" class="btn btn-gold">Investment Options</a>
+        <a href="../contact.html" class="btn btn-outline">Contact Egypt Office</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="padding-top:80px;padding-bottom:60px;">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <a href="../index.html" class="flex items-center gap-3 no-underline mb-6">
+            <div class="logo-mark"><span class="logo-letter">D</span></div>
+            <div><div class="logo-name">DIYAR</div><div class="logo-sub">Estates</div></div>
+          </a>
+          <p class="footer-info mb-6">International real estate development and investment across USA, Egypt &amp; Turkey.</p>
+          <div class="flex gap-3">
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Navigation</h5>
+          <a href="../index.html" class="footer-link">Home</a>
+          <a href="../about.html" class="footer-link">About Us</a>
+          <a href="egypt.html" class="footer-link">Egypt Projects</a>
+          <a href="usa.html" class="footer-link">USA Projects</a>
+          <a href="turkey.html" class="footer-link">Turkey Projects</a>
+          <a href="../investors.html" class="footer-link">Investors</a>
+          <a href="../contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <h5 class="footer-heading">USA Headquarters</h5>
+          <div class="space-y-3 footer-info">
+            <div class="flex gap-3 items-center"><i class="fas fa-envelope footer-icon"></i><a href="mailto:info@diyarestes.com">info@diyarestes.com</a></div>
+            <div class="flex gap-3 items-center"><i class="fas fa-globe footer-icon"></i><a href="http://www.diyarestes.com">www.diyarestes.com</a></div>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Egypt Projects</h5>
+          <a href="candle-hotel.html" class="footer-link">Candle Hotel – Dendera</a>
+          <a href="al-reef-al-qenawi.html" class="footer-link">Al Reef Al Qenawi</a>
+          <a href="feddan-farm-160.html" class="footer-link">160 Feddan Farm</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);padding:22px 0;">
+      <div class="container flex flex-col md:flex-row justify-between items-center gap-4">
+        <p style="font-size:12px;color:rgba(255,255,255,0.22);">&copy; 2024 DIYAR Estates. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Privacy Policy</a>
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

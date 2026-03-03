@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DIYAR Estates — International Real Estate Development & Investment. Premium portfolio across USA, Egypt & Turkey." />
+  <meta property="og:title" content="DIYAR Estates | International Real Estate Investment" />
+  <meta property="og:description" content="Global real estate development with premium projects across USA, Egypt & Turkey." />
+  <title>DIYAR Estates — International Real Estate Investment</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary: '#0A1628', 'primary-light': '#152238',
+          section: '#0E1F35', gold: '#C9A84C', 'gold-light': '#E5C97A'
+        }
+      }}
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body class="bg-primary text-white">
+
+  <!-- ======================================================
+       NAVIGATION
+  ====================================================== -->
+  <nav id="navbar">
+    <div class="container flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 no-underline">
+        <div class="logo-mark"><span class="logo-letter">D</span></div>
+        <div>
+          <div class="logo-name">DIYAR</div>
+          <div class="logo-sub">Estates</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link flex items-center gap-1">
+            Projects <i class="fas fa-chevron-down text-xs opacity-60 ml-1"></i>
+          </a>
+          <div class="dropdown-panel">
+            <a href="projects/egypt.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Egypt Projects</a>
+            <a href="projects/usa.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>USA Projects</a>
+            <a href="projects/turkey.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Turkey Projects</a>
+          </div>
+        </div>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <a href="contact.html" class="btn btn-gold btn-sm hidden lg:inline-flex">
+          Schedule Consultation
+        </a>
+        <button id="menuBtn" class="lg:hidden text-white text-xl p-1" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenuBtn" class="absolute top-7 right-7 text-white text-3xl" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects/egypt.html">Egypt Projects</a>
+    <a href="projects/usa.html">USA Projects</a>
+    <a href="projects/turkey.html">Turkey Projects</a>
+    <a href="investors.html">Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold mt-6">Schedule Consultation</a>
+  </div>
+
+
+  <!-- ======================================================
+       HERO
+  ====================================================== -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="max-w-3xl">
+        <div class="section-label mb-6" data-reveal>International Real Estate Excellence</div>
+
+        <h1 class="heading-xl font-bold text-white mb-7" style="line-height:1.08;" data-reveal data-delay="120">
+          Invest in Tomorrow's<br>
+          <em class="text-gold not-italic">Prime Real Estate</em>
+        </h1>
+
+        <p class="text-lg mb-12 max-w-xl leading-relaxed" style="color:rgba(255,255,255,0.68);" data-reveal data-delay="240">
+          A globally trusted real estate development and investment firm delivering
+          exceptional results across the United States, Egypt, and Turkey.
+        </p>
+
+        <div class="flex flex-wrap gap-4" data-reveal data-delay="360">
+          <a href="projects/egypt.html" class="btn btn-gold">
+            Explore Projects <i class="fas fa-arrow-right text-xs ml-1"></i>
+          </a>
+          <a href="investors.html" class="btn btn-outline">
+            Investor Relations
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       STATS BAR
+  ====================================================== -->
+  <section style="background:#0E1F35; border-top:1px solid rgba(201,168,76,0.1); border-bottom:1px solid rgba(201,168,76,0.1);">
+    <div class="container section-pad-sm">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-0 lg:divide-x" style="--tw-divide-opacity:0.08;">
+        <div class="text-center" data-reveal>
+          <div class="stat-num" data-counter="2.5" data-prefix="$" data-suffix="B+">$2.5B+</div>
+          <div class="stat-label">Assets Under Development</div>
+        </div>
+        <div class="text-center" data-reveal data-delay="100">
+          <div class="stat-num" data-counter="50" data-suffix="+">50+</div>
+          <div class="stat-label">Premium Projects</div>
+        </div>
+        <div class="text-center" data-reveal data-delay="200">
+          <div class="stat-num" data-counter="3">3</div>
+          <div class="stat-label">Countries</div>
+        </div>
+        <div class="text-center" data-reveal data-delay="300">
+          <div class="stat-num" data-counter="15" data-suffix="+">15+</div>
+          <div class="stat-label">Years of Excellence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       FEATURED PROJECTS
+  ====================================================== -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="max-w-xl mb-16">
+        <div class="section-label mb-4" data-reveal>Our Portfolio</div>
+        <h2 class="heading-lg text-white mb-5" data-reveal data-delay="100">
+          Signature <em class="text-gold not-italic">Projects</em>
+        </h2>
+        <div class="gold-line mb-6" data-reveal data-delay="150"></div>
+        <p style="color:rgba(255,255,255,0.55); line-height:1.85; font-size:15px;" data-reveal data-delay="200">
+          From luxury hospitality near ancient Egyptian temples to sprawling agricultural
+          investments and boutique residential developments across three continents.
+        </p>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card: Candle Hotel -->
+        <article class="card" data-reveal>
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+                 alt="Candle Hotel – Dendera" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2">
+              <span class="card-badge">Egypt</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;">Hospitality</span>
+            </div>
+            <h3>Candle Hotel – Dendera</h3>
+            <p>A premium hospitality destination near the historic Dendera temples, blending pharaonic heritage with contemporary luxury.</p>
+            <a href="projects/candle-hotel.html" class="btn btn-outline-gold btn-sm">
+              View Project <i class="fas fa-arrow-right text-xs ml-1"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card: Al Reef Al Qenawi -->
+        <article class="card" data-reveal data-delay="150">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
+                 alt="Al Reef Al Qenawi – 4000 Feddan" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2">
+              <span class="card-badge">Egypt</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;">Agriculture</span>
+            </div>
+            <h3>Al Reef Al Qenawi – 4000 Feddan</h3>
+            <p>A landmark 4000-feddan agricultural and eco-development project transforming Upper Egypt's landscape into a productive investment haven.</p>
+            <a href="projects/al-reef-al-qenawi.html" class="btn btn-outline-gold btn-sm">
+              View Project <i class="fas fa-arrow-right text-xs ml-1"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card: 160 Feddan Farm -->
+        <article class="card" data-reveal data-delay="300">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                 alt="160 Feddan Farm" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="flex items-center gap-2">
+              <span class="card-badge">Egypt</span>
+              <span style="font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:1px;">Land Development</span>
+            </div>
+            <h3>160 Feddan Farm</h3>
+            <p>A productive agricultural investment offering sustainable yields and strong returns in one of Egypt's most fertile regions.</p>
+            <a href="projects/feddan-farm-160.html" class="btn btn-outline-gold btn-sm">
+              View Project <i class="fas fa-arrow-right text-xs ml-1"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- View all -->
+      <div class="text-center mt-14" data-reveal>
+        <a href="projects/egypt.html" class="btn btn-outline">
+          View All Projects <i class="fas fa-arrow-right text-xs ml-2"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       WHY INVEST WITH US
+  ====================================================== -->
+  <section class="section-pad bg-section">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+        <!-- Left: text -->
+        <div>
+          <div class="section-label mb-5" data-reveal>Why Choose DIYAR</div>
+          <h2 class="heading-lg text-white mb-6" style="line-height:1.2;" data-reveal data-delay="100">
+            Built on Trust,<br>Driven by <em class="text-gold not-italic">Excellence</em>
+          </h2>
+          <div class="gold-line mb-6" data-reveal data-delay="150"></div>
+          <p style="color:rgba(255,255,255,0.55); font-size:15px; line-height:1.9; max-width:500px; margin-bottom:44px;" data-reveal data-delay="200">
+            Over 15 years of building a reputation for exceptional real estate investments
+            with strong returns, unwavering integrity, and a truly global perspective.
+          </p>
+
+          <div class="space-y-8">
+            <div class="flex items-start gap-6 feature-item" data-reveal data-delay="100">
+              <div class="icon-box"><i class="fas fa-globe"></i></div>
+              <div>
+                <h4>Global Expertise</h4>
+                <p>Operating across three continents with deep local market knowledge and international investment standards.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-6 feature-item" data-reveal data-delay="200">
+              <div class="icon-box"><i class="fas fa-shield-halved"></i></div>
+              <div>
+                <h4>Legally Secured Investments</h4>
+                <p>All projects are legally vetted, transparently structured, and backed by tangible real estate assets.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-6 feature-item" data-reveal data-delay="300">
+              <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <h4>Consistent Strong Returns</h4>
+                <p>Proven track record of above-market returns through strategic development timing and asset selection.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-12" data-reveal data-delay="400">
+            <a href="investors.html" class="btn btn-gold">
+              Investor Relations <i class="fas fa-arrow-right text-xs ml-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: image + stat card -->
+        <div class="relative" data-reveal-right data-delay="100">
+          <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?auto=format&fit=crop&w=900&q=80"
+               alt="DIYAR Estates Building"
+               style="width:100%; height:560px; object-fit:cover; display:block;" />
+          <!-- Floating stat -->
+          <div style="position:absolute; bottom:-28px; left:-28px; background:#0A1628; border:1px solid rgba(201,168,76,0.2); padding:28px 36px; min-width:210px;">
+            <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#C9A84C;margin-bottom:6px;">Client Satisfaction</div>
+            <div style="font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:white;line-height:1;">98%</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:4px;">Investor Retention Rate</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Value props grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-28">
+        <div class="value-prop" data-reveal>
+          <div class="icon-box"><i class="fas fa-building"></i></div>
+          <h4>Premium Development</h4>
+          <p>World-class development standards with premium materials and international finishes.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="100">
+          <div class="icon-box"><i class="fas fa-handshake"></i></div>
+          <h4>Trusted Partnerships</h4>
+          <p>Strategic alliances with leading banks, governments, and institutions globally.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="200">
+          <div class="icon-box"><i class="fas fa-leaf"></i></div>
+          <h4>Sustainable Growth</h4>
+          <p>Environmentally responsible developments that generate lasting community value.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="300">
+          <div class="icon-box"><i class="fas fa-users"></i></div>
+          <h4>Expert Team</h4>
+          <p>A multidisciplinary team of architects, economists, and real estate veterans.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       GLOBAL PRESENCE
+  ====================================================== -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+
+      <div class="text-center mb-16">
+        <div class="section-label mb-4" data-reveal>Our Reach</div>
+        <h2 class="heading-lg text-white mb-5" data-reveal data-delay="100">
+          A Truly <em class="text-gold not-italic">Global</em> Footprint
+        </h2>
+        <div class="gold-line-c mb-6" data-reveal data-delay="150"></div>
+        <p style="color:rgba(255,255,255,0.5); max-width:520px; margin:0 auto; line-height:1.85; font-size:15px;" data-reveal data-delay="200">
+          Three strategic markets. One unified vision. Delivering premium real estate
+          value across cultures and continents.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- USA -->
+        <div class="country-card" data-reveal>
+          <div class="country-card-img">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=700&q=80" alt="United States" loading="lazy" />
+          </div>
+          <div class="country-card-body">
+            <div class="country-tag">Main Headquarters</div>
+            <h3>United States</h3>
+            <p>Our main HQ drives strategic direction, investor relations, and premier North American real estate operations.</p>
+            <div class="country-stats">
+              <div class="country-stats-item">
+                <div class="num">12+</div>
+                <div class="lbl">Projects</div>
+              </div>
+              <div class="country-stats-item">
+                <div class="num">$1.2B</div>
+                <div class="lbl">Portfolio</div>
+              </div>
+            </div>
+            <a href="projects/usa.html" class="btn btn-outline-gold btn-sm">View USA Projects</a>
+          </div>
+        </div>
+
+        <!-- Egypt -->
+        <div class="country-card" data-reveal data-delay="150">
+          <div class="country-card-img">
+            <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=700&q=80" alt="Egypt" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=700&q=80'" />
+          </div>
+          <div class="country-card-body">
+            <div class="country-tag">Regional Office</div>
+            <h3>Egypt</h3>
+            <p>Active development across Upper Egypt with landmark hospitality, agricultural, and land development projects.</p>
+            <div class="country-stats">
+              <div class="country-stats-item">
+                <div class="num">20+</div>
+                <div class="lbl">Projects</div>
+              </div>
+              <div class="country-stats-item">
+                <div class="num">$850M</div>
+                <div class="lbl">Portfolio</div>
+              </div>
+            </div>
+            <a href="projects/egypt.html" class="btn btn-outline-gold btn-sm">View Egypt Projects</a>
+          </div>
+        </div>
+
+        <!-- Turkey -->
+        <div class="country-card" data-reveal data-delay="300">
+          <div class="country-card-img">
+            <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=700&q=80" alt="Turkey" loading="lazy" />
+          </div>
+          <div class="country-card-body">
+            <div class="country-tag">Regional Office</div>
+            <h3>Turkey</h3>
+            <p>Premium residential and commercial developments in Turkey's most sought-after locations including Istanbul and beyond.</p>
+            <div class="country-stats">
+              <div class="country-stats-item">
+                <div class="num">18+</div>
+                <div class="lbl">Projects</div>
+              </div>
+              <div class="country-stats-item">
+                <div class="num">$500M</div>
+                <div class="lbl">Portfolio</div>
+              </div>
+            </div>
+            <a href="projects/turkey.html" class="btn btn-outline-gold btn-sm">View Turkey Projects</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       CTA SECTION
+  ====================================================== -->
+  <section style="background:var(--grad-cta); padding:120px 0; position:relative; overflow:hidden;">
+    <!-- Decorative circles -->
+    <div style="position:absolute;top:-200px;right:-100px;width:700px;height:700px;border-radius:50%;border:1px solid rgba(201,168,76,0.04);pointer-events:none;"></div>
+    <div style="position:absolute;top:-120px;right:-40px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(201,168,76,0.07);pointer-events:none;"></div>
+
+    <div class="container relative z-10">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="section-label mb-6" data-reveal>Begin Your Investment Journey</div>
+        <h2 class="heading-lg text-white mb-6" style="line-height:1.2;" data-reveal data-delay="100">
+          Ready to Invest in<br><em class="text-gold not-italic">Premium Real Estate?</em>
+        </h2>
+        <p style="color:rgba(255,255,255,0.58); font-size:15px; line-height:1.9; margin-bottom:48px;" data-reveal data-delay="200">
+          Connect with our investment team and discover exclusive opportunities
+          carefully tailored to your financial goals and risk profile.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4" data-reveal data-delay="300">
+          <a href="contact.html" class="btn btn-gold">
+            Schedule a Consultation <i class="fas fa-arrow-right text-xs ml-2"></i>
+          </a>
+          <a href="investors.html" class="btn btn-outline" data-download="Investment_Profile">
+            Download Investment Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ======================================================
+       FOOTER
+  ====================================================== -->
+  <footer>
+    <div class="container" style="padding-top:80px; padding-bottom:60px;">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+        <!-- Brand -->
+        <div>
+          <a href="index.html" class="flex items-center gap-3 no-underline mb-6">
+            <div class="logo-mark"><span class="logo-letter">D</span></div>
+            <div>
+              <div class="logo-name">DIYAR</div>
+              <div class="logo-sub">Estates</div>
+            </div>
+          </a>
+          <p class="footer-info mb-6">
+            International real estate development and investment with a premium
+            portfolio across USA, Egypt &amp; Turkey.
+          </p>
+          <div class="flex gap-3">
+            <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="X/Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <h5 class="footer-heading">Navigation</h5>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="projects/egypt.html" class="footer-link">Egypt Projects</a>
+          <a href="projects/usa.html" class="footer-link">USA Projects</a>
+          <a href="projects/turkey.html" class="footer-link">Turkey Projects</a>
+          <a href="investors.html" class="footer-link">Investors</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+
+        <!-- USA HQ -->
+        <div>
+          <h5 class="footer-heading">USA Headquarters</h5>
+          <div class="space-y-3 footer-info">
+            <div class="flex gap-3 items-start">
+              <i class="fas fa-location-dot footer-icon"></i>
+              <span>United States<br>Main Headquarters</span>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-envelope footer-icon"></i>
+              <a href="mailto:info@diyarestes.com">info@diyarestes.com</a>
+            </div>
+            <div class="flex gap-3 items-center">
+              <i class="fas fa-globe footer-icon"></i>
+              <a href="http://www.diyarestes.com">www.diyarestes.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branches -->
+        <div>
+          <h5 class="footer-heading">Regional Offices</h5>
+          <div class="space-y-5 footer-info">
+            <div>
+              <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:1px;margin-bottom:4px;">Egypt Branch</div>
+              <p>Egypt Regional Office<br>Upper Egypt Operations</p>
+            </div>
+            <div>
+              <div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:1px;margin-bottom:4px;">Turkey Branch</div>
+              <p>Turkey Regional Office<br>Istanbul &amp; Beyond</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.05); padding:22px 0;">
+      <div class="container flex flex-col md:flex-row justify-between items-center gap-4">
+        <p style="font-size:12px;color:rgba(255,255,255,0.22);">&copy; 2024 DIYAR Estates. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Privacy Policy</a>
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About DIYAR Estates — Our story, vision, leadership team, and global corporate values." />
+  <title>About Us — DIYAR Estates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#0A1628','primary-light':'#152238',section:'#0E1F35',gold:'#C9A84C','gold-light':'#E5C97A'}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body class="bg-primary text-white">
+
+  <!-- NAV (shared) -->
+  <nav id="navbar">
+    <div class="container flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 no-underline">
+        <div class="logo-mark"><span class="logo-letter">D</span></div>
+        <div><div class="logo-name">DIYAR</div><div class="logo-sub">Estates</div></div>
+      </a>
+      <div class="hidden lg:flex items-center gap-10">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link" style="color:#C9A84C;">About</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link flex items-center gap-1">Projects <i class="fas fa-chevron-down text-xs opacity-60 ml-1"></i></a>
+          <div class="dropdown-panel">
+            <a href="projects/egypt.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Egypt Projects</a>
+            <a href="projects/usa.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>USA Projects</a>
+            <a href="projects/turkey.html"><i class="fas fa-circle text-xs mr-2 opacity-40"></i>Turkey Projects</a>
+          </div>
+        </div>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="contact.html" class="btn btn-gold btn-sm hidden lg:inline-flex">Schedule Consultation</a>
+        <button id="menuBtn" class="lg:hidden text-white text-xl p-1"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="mobile-menu">
+    <button id="closeMenuBtn" class="absolute top-7 right-7 text-white text-3xl"><i class="fas fa-times"></i></button>
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="projects/egypt.html">Egypt Projects</a><a href="projects/usa.html">USA Projects</a>
+    <a href="projects/turkey.html">Turkey Projects</a><a href="investors.html">Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold mt-6">Schedule Consultation</a>
+  </div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb mb-5">
+        <div class="breadcrumb-item"><a href="index.html">Home</a></div>
+        <span class="breadcrumb-sep"><i class="fas fa-chevron-right text-xs"></i></span>
+        <div class="breadcrumb-item active">About Us</div>
+      </div>
+      <div class="section-label mb-4">Our Story</div>
+      <h1 class="heading-xl text-white" style="line-height:1.1; max-width:700px;">
+        About <em class="text-gold not-italic">DIYAR Estates</em>
+      </h1>
+    </div>
+  </section>
+
+
+  <!-- COMPANY STORY -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+        <div data-reveal-left>
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+               alt="DIYAR Estates Office" style="width:100%;height:500px;object-fit:cover;display:block;" />
+          <div style="background:#0E1F35;border:1px solid rgba(201,168,76,0.15);padding:28px 32px;margin-top:1px;">
+            <div class="flex gap-12">
+              <div>
+                <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#C9A84C;">2009</div>
+                <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Founded</div>
+              </div>
+              <div>
+                <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#C9A84C;">15+</div>
+                <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Years Active</div>
+              </div>
+              <div>
+                <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:#C9A84C;">3</div>
+                <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);">Continents</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal data-delay="100">
+          <div class="section-label mb-5">Our Heritage</div>
+          <h2 class="heading-lg text-white mb-6" style="line-height:1.2;">
+            A Legacy of Real Estate <em class="text-gold not-italic">Excellence</em>
+          </h2>
+          <div class="gold-line mb-8"></div>
+          <div style="color:rgba(255,255,255,0.6);font-size:15px;line-height:1.95;" class="space-y-5">
+            <p>Founded in 2009 with a singular vision: to create world-class real estate investments that deliver exceptional value to investors while contributing meaningfully to the communities we serve.</p>
+            <p>What began as a focused US-based operation has grown into a truly international enterprise with active development portfolios spanning three continents. Our Egypt branch manages landmark projects across Upper Egypt, while our Turkey operations deliver premium residential and commercial properties in Istanbul and key cities.</p>
+            <p>DIYAR Estates brings together the best of American corporate governance, Middle Eastern market insight, and global investment acumen — creating a unique competitive advantage in every market we enter.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VISION & MISSION -->
+  <section class="section-pad bg-section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label mb-4" data-reveal>What Drives Us</div>
+        <h2 class="heading-lg text-white" data-reveal data-delay="100">Vision &amp; <em class="text-gold not-italic">Mission</em></h2>
+        <div class="gold-line-c mt-6" data-reveal data-delay="150"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div class="highlight-box" data-reveal>
+          <div class="flex items-center gap-4 mb-5">
+            <div class="icon-box" style="width:52px;height:52px;font-size:20px;"><i class="fas fa-eye"></i></div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;">Our Vision</h3>
+          </div>
+          <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.9;">
+            To be the most trusted international real estate development and investment firm,
+            recognized for delivering premium value across every market we operate in — building
+            not just properties, but lasting legacies.
+          </p>
+        </div>
+        <div class="highlight-box" data-reveal data-delay="150">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="icon-box" style="width:52px;height:52px;font-size:20px;"><i class="fas fa-bullseye"></i></div>
+            <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:white;">Our Mission</h3>
+          </div>
+          <p style="font-size:15px;color:rgba(255,255,255,0.6);line-height:1.9;">
+            To identify, develop, and deliver exceptional real estate opportunities that generate
+            strong investor returns while driving economic growth and community development in every
+            region where we operate.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CORPORATE VALUES -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label mb-4" data-reveal>Our Principles</div>
+        <h2 class="heading-lg text-white" data-reveal data-delay="100">
+          Corporate <em class="text-gold not-italic">Values</em>
+        </h2>
+        <div class="gold-line-c mt-6" data-reveal data-delay="150"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="value-prop" data-reveal>
+          <div class="icon-box"><i class="fas fa-gem"></i></div>
+          <h4>Integrity</h4>
+          <p>We operate with absolute transparency. Every investment is legally secured, every commitment is honored.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="100">
+          <div class="icon-box"><i class="fas fa-star"></i></div>
+          <h4>Excellence</h4>
+          <p>From architecture to investor relations, we set the highest standards and refuse to compromise.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="200">
+          <div class="icon-box"><i class="fas fa-seedling"></i></div>
+          <h4>Sustainability</h4>
+          <p>We develop with a long-term perspective, creating value that endures for generations.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="300">
+          <div class="icon-box"><i class="fas fa-handshake"></i></div>
+          <h4>Partnership</h4>
+          <p>Every investor is a partner. We align our success directly with yours.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="400">
+          <div class="icon-box"><i class="fas fa-lightbulb"></i></div>
+          <h4>Innovation</h4>
+          <p>Constantly seeking smarter ways to develop, finance, and manage real estate assets.</p>
+        </div>
+        <div class="value-prop" data-reveal data-delay="500">
+          <div class="icon-box"><i class="fas fa-globe-americas"></i></div>
+          <h4>Global Thinking</h4>
+          <p>Local execution, global standards — the DIYAR way of operating across borders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEADERSHIP TEAM -->
+  <section class="section-pad bg-section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label mb-4" data-reveal>The People Behind the Vision</div>
+        <h2 class="heading-lg text-white" data-reveal data-delay="100">
+          Leadership &amp; <em class="text-gold not-italic">Management</em>
+        </h2>
+        <div class="gold-line-c mt-6" data-reveal data-delay="150"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <div class="team-card" data-reveal>
+          <div class="team-card-img">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80" alt="CEO" loading="lazy" />
+          </div>
+          <div class="team-card-body">
+            <h4>Ahmad Al-Diyar</h4>
+            <span>Founder & CEO</span>
+            <p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:10px;">15+ years shaping international real estate strategy across three continents.</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-reveal data-delay="100">
+          <div class="team-card-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="CFO" loading="lazy" />
+          </div>
+          <div class="team-card-body">
+            <h4>Sarah Mitchell</h4>
+            <span>Chief Financial Officer</span>
+            <p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:10px;">CFA with 20 years of international investment banking and real estate finance experience.</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-reveal data-delay="200">
+          <div class="team-card-img">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80" alt="Egypt Director" loading="lazy" />
+          </div>
+          <div class="team-card-body">
+            <h4>Mostafa El-Sayed</h4>
+            <span>Egypt Operations Director</span>
+            <p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:10px;">Leading Egypt's portfolio with deep expertise in Upper Egypt markets and development.</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-reveal data-delay="300">
+          <div class="team-card-img">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80" alt="Turkey Director" loading="lazy" />
+          </div>
+          <div class="team-card-body">
+            <h4>Kemal Yıldız</h4>
+            <span>Turkey Operations Director</span>
+            <p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.7;margin-top:10px;">Istanbul-based executive with extensive Turkish real estate and construction industry experience.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TIMELINE -->
+  <section class="section-pad bg-primary">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+        <div>
+          <div class="section-label mb-5" data-reveal>Our Journey</div>
+          <h2 class="heading-lg text-white mb-6" data-reveal data-delay="100">
+            Milestones of <em class="text-gold not-italic">Growth</em>
+          </h2>
+          <div class="gold-line mb-8" data-reveal data-delay="150"></div>
+          <p style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.9;" data-reveal data-delay="200">
+            Each milestone represents a significant step in our journey from a US-focused firm
+            to a true international real estate powerhouse.
+          </p>
+        </div>
+
+        <div class="timeline" data-reveal data-delay="150">
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2009</div>
+            <h4>Company Founded</h4>
+            <p>DIYAR Estates established in the United States with a clear vision for international expansion.</p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2013</div>
+            <h4>Egypt Market Entry</h4>
+            <p>First Egypt office opened, marking entry into North African and Middle Eastern real estate markets.</p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2016</div>
+            <h4>Candle Hotel Development</h4>
+            <p>Groundbreaking on the flagship Candle Hotel near Dendera — our largest hospitality project.</p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2018</div>
+            <h4>Turkey Expansion</h4>
+            <p>DIYAR Estates Turkey launched, capitalizing on booming Istanbul real estate market.</p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2021</div>
+            <h4>Al Reef Al Qenawi – 4000 Feddan</h4>
+            <p>Launched Egypt's largest agricultural development project spanning 4000 feddans of prime land.</p>
+          </div>
+
+          <div class="timeline-entry">
+            <div class="timeline-dot"></div>
+            <div class="timeline-year">2024</div>
+            <h4>$2.5B Portfolio Milestone</h4>
+            <p>Portfolio surpasses $2.5B in assets under development across all three markets.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GLOBAL FOOTPRINT -->
+  <section class="section-pad bg-section">
+    <div class="container">
+      <div class="text-center mb-16">
+        <div class="section-label mb-4" data-reveal>Where We Operate</div>
+        <h2 class="heading-lg text-white" data-reveal data-delay="100">
+          Our Global <em class="text-gold not-italic">Footprint</em>
+        </h2>
+        <div class="gold-line-c mt-6" data-reveal data-delay="150"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div data-reveal>
+          <div class="stat-num" data-counter="3">3</div>
+          <div class="stat-label">Countries</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.7;">USA &bull; Egypt &bull; Turkey</p>
+        </div>
+        <div data-reveal data-delay="150">
+          <div class="stat-num" data-counter="50" data-suffix="+">50+</div>
+          <div class="stat-label">Total Projects</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.7;">Completed &bull; Active &bull; Pipeline</p>
+        </div>
+        <div data-reveal data-delay="300">
+          <div class="stat-num" data-counter="1000" data-suffix="+">1000+</div>
+          <div class="stat-label">Satisfied Investors</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:12px;line-height:1.7;">Across 25+ nationalities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section style="background:var(--grad-cta);padding:100px 0;">
+    <div class="container text-center">
+      <div class="section-label mb-5" data-reveal>Join Our Journey</div>
+      <h2 class="heading-md text-white mb-6" data-reveal data-delay="100">Become a DIYAR Estates Investor</h2>
+      <p style="color:rgba(255,255,255,0.55);font-size:15px;line-height:1.9;max-width:540px;margin:0 auto 40px;" data-reveal data-delay="200">
+        Access exclusive investment opportunities with a partner you can trust.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4" data-reveal data-delay="300">
+        <a href="investors.html" class="btn btn-gold">Explore Investment Options</a>
+        <a href="contact.html" class="btn btn-outline">Contact Our Team</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container" style="padding-top:80px;padding-bottom:60px;">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <a href="index.html" class="flex items-center gap-3 no-underline mb-6">
+            <div class="logo-mark"><span class="logo-letter">D</span></div>
+            <div><div class="logo-name">DIYAR</div><div class="logo-sub">Estates</div></div>
+          </a>
+          <p class="footer-info mb-6">International real estate development and investment across USA, Egypt &amp; Turkey.</p>
+          <div class="flex gap-3">
+            <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Navigation</h5>
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="projects/egypt.html" class="footer-link">Egypt Projects</a>
+          <a href="projects/usa.html" class="footer-link">USA Projects</a>
+          <a href="projects/turkey.html" class="footer-link">Turkey Projects</a>
+          <a href="investors.html" class="footer-link">Investors</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+        <div>
+          <h5 class="footer-heading">USA Headquarters</h5>
+          <div class="space-y-3 footer-info">
+            <div class="flex gap-3 items-start"><i class="fas fa-location-dot footer-icon"></i><span>United States — Main HQ</span></div>
+            <div class="flex gap-3 items-center"><i class="fas fa-envelope footer-icon"></i><a href="mailto:info@diyarestes.com">info@diyarestes.com</a></div>
+            <div class="flex gap-3 items-center"><i class="fas fa-globe footer-icon"></i><a href="http://www.diyarestes.com">www.diyarestes.com</a></div>
+          </div>
+        </div>
+        <div>
+          <h5 class="footer-heading">Regional Offices</h5>
+          <div class="space-y-5 footer-info">
+            <div><div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);margin-bottom:4px;">Egypt Branch</div><p>Upper Egypt Operations</p></div>
+            <div><div style="font-size:11px;font-weight:600;color:rgba(255,255,255,0.65);margin-bottom:4px;">Turkey Branch</div><p>Istanbul &amp; Beyond</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);padding:22px 0;">
+      <div class="container flex flex-col md:flex-row justify-between items-center gap-4">
+        <p style="font-size:12px;color:rgba(255,255,255,0.22);">&copy; 2024 DIYAR Estates. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Privacy Policy</a>
+          <a href="#" style="font-size:12px;color:rgba(255,255,255,0.22);text-decoration:none;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
